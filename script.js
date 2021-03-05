@@ -1,28 +1,31 @@
-buildGrid(21);
+displayGrid(21);
 
-function buildGrid(size) {
+function displayGrid(size) {
   const grid = document.querySelector('#grid');
+
+  clearGrid();
   for (let i = 0; i < size; i++) {
     grid.appendChild(makeRow(size, i));
   }
 }
 
-function makeRow(size, idNum) {
+function makeRow(size, id) {
   let row = document.createElement('div');
   row.classList = 'row';
-  row.id = `row-${idNum}`;
+  row.id = `row-${id}`;
 
   for (let i = 0; i < size; i++) {
-    row.appendChild(makeCell(`${idNum}:${i}`));
+    row.appendChild(makeCell(`${id}:${i}`));
   }
   return row;
 }
 
-function makeCell(idNum) {
+function makeCell(id) {
   let cell = document.createElement('input');
   cell.type = 'checkbox';
   cell.classList = 'cell';
-  cell.id = `cell-${idNum}`;
+  cell.id = `cell-${id}`;
+  cell.checked = random() ? true : false;
   return cell;
 }
 
