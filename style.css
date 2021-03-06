@@ -1,3 +1,12 @@
+/* 
+Thoughts/TODO: 
+  Consider adding animations to the cells.  
+  It would be cool to see them 'grow' from a point to fill the circle?
+  This may help with that: https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+
+  Color palette: https://www.colorcombos.com/color-schemes/221/ColorCombo221.html
+ */
+
 * {
   box-sizing: border-box;
 }
@@ -35,6 +44,15 @@ button {
   border-radius: 8px;
 }
 
+button:hover {
+  background: #313c53;
+}
+
+button:active {
+  box-shadow: 1px 1px 10px 0px rgba(28, 38, 60, 0.6);
+  transform: translateY(4px);
+}
+
 #grid {
   margin: 15px;
   border: 6px solid #313c53;
@@ -56,6 +74,7 @@ button {
   outline: none;
   background-color: #b6c0d2;
   cursor: pointer;
+  transition: background-color 0.333s ease;
 }
 
 .cell:checked {
