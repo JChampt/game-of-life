@@ -25,10 +25,19 @@ body {
   color: #313c53;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   margin: 15px;
   margin-top: 10px;
   text-transform: uppercase;
+}
+
+h1:hover {
+  color: #455268;
 }
 
 button {
@@ -42,6 +51,7 @@ button {
   height: 35px;
   font-size: 1.4em;
   border-radius: 8px;
+  /* padding: 8px; */
 }
 
 button:hover {
@@ -55,9 +65,9 @@ button:active {
 
 #grid {
   margin: 15px;
-  border: 6px solid #313c53;
   border-radius: 8px;
-  box-shadow: 3px 3px 15px -1px rgba(69, 82, 104, 0.3);
+  box-shadow: 3px 3px 15px -1px rgba(69, 82, 104, 0.15);
+  padding: 15px;
 }
 
 .row {

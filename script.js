@@ -40,6 +40,30 @@ function random() {
   return Math.round(Math.random());
 }
 
+function evalCell(cell) {
+  const [row, col] = getCellLocation(cell);
+  const leftBound = col - 1 < 0 ? col : col - 1;
+
+  let rowAbove = grid[row - 1] ? grid[row - 1].slice(leftBound, col + 2) : [];
+  let rowOn = grid[row].slice(leftBound, col + 2);
+  let rowBelow = grid[row + 1] ? grid[row + 1].slice(leftBound, col + 2) : [];
+
+  let total = rowAbove.concat(rowOn, rowBelow).reduce((sum, ele) => {
+    sum += ele.checked == true ? 1 : 0;
+    return sum;
+  }, 0);
+
+  if (cell.checked) {
+    return total == 3 || total == 4 ? 1 : 0;
+  } else {
+    return total == 3 ? 1 : 0;
+  }
+}
+
+function getCellLocation(cell) {
+  return cell.id.split(':').map(Number);
+}
+
 function makeRandomTemplate(size) {
   let arr = Array(size).fill(Array(size).fill(0));
   return arr.map((row) => row.map((col) => random()));
@@ -47,9 +71,9 @@ function makeRandomTemplate(size) {
 
 function updateGrid(template) {
   for (let row = 0; row < template.length; row++) {
-    for (let cell = 0; cell < grid[row].length; cell++) {
-      const c = grid[row][cell];
-      c.checked = template[row][cell] ? true : false;
+    for (let col = 0; col < grid[row].length; col++) {
+      const cell = grid[row][col];
+      cell.checked = template[row][col] ? true : false;
     }
   }
 }
