@@ -52,8 +52,23 @@ function makeGrid(size) {
 }
 
 function addControlListeners() {
-  const button = document.querySelector('#clear');
-  button.addEventListener('click', clearGrid);
+  const playButton = document.querySelector('#play');
+  playButton.addEventListener('click', playAnimation);
+
+  const nextButton = document.querySelector('#next');
+  nextButton.addEventListener('click', theNextGeneration);
+
+  const clearButton = document.querySelector('#clear');
+  clearButton.addEventListener('click', clearGrid);
+}
+
+function playAnimation() {
+  const playButton = document.querySelector('#play');
+
+  playButton.dataset.play = playButton.dataset.play === 'false' ? 'true' : 'false';
+  playButton.innerText = playButton.innerText === 'Start' ? 'Stop' : 'Start';
+
+  if (playButton.dataset.play === 'true') animateGrid();
 }
 
 function clearGrid() {
@@ -65,7 +80,31 @@ function clearGrid() {
   }
 }
 
-function evalCell(cell) {
+function theNextGeneration() {
+  updateGridFromTemplate(evalGrid());
+}
+
+function evalGrid() {
+  let template = Array(GRID.length)
+    .fill(0)
+    .map(() => Array(GRID.length).fill(0));
+
+  for (let row = 0; row < GRID.length; row++) {
+    for (let col = 0; col < GRID[row].length; col++) {
+      const cell = GRID[row][col];
+      let cellTotal = getCellTotal(cell);
+
+      if (cell.checked) {
+        template[row][col] = cellTotal == 3 || cellTotal == 4 ? 1 : 0;
+      } else {
+        template[row][col] = cellTotal == 3 ? 1 : 0;
+      }
+    }
+  }
+  return template;
+}
+
+function getCellTotal(cell) {
   const [row, col] = getCellLocation(cell);
   const leftBound = col - 1 < 0 ? col : col - 1;
 
@@ -73,29 +112,17 @@ function evalCell(cell) {
   let rowOn = GRID[row].slice(leftBound, col + 2);
   let rowBelow = GRID[row + 1] ? GRID[row + 1].slice(leftBound, col + 2) : [];
 
-  let total = rowAbove.concat(rowOn, rowBelow).reduce((sum, ele) => {
-    sum += ele.checked == true ? 1 : 0;
-    return sum;
-  }, 0);
-
-  if (cell.checked) {
-    return total == 3 || total == 4 ? 1 : 0;
-  } else {
-    return total == 3 ? 1 : 0;
-  }
+  return rowAbove
+    .concat(rowOn, rowBelow)
+    .reduce((total, foo) => total + (foo.checked == true ? 1 : 0), 0);
 
   function getCellLocation(cell) {
     return cell.id.split(':').map(Number);
   }
 }
 
-function makeRandomTemplate(size) {
-  let arr = Array(size).fill(Array(size).fill(0));
-  return arr.map((row) => row.map((col) => random()));
-}
-
-function updateGrid(template) {
-  for (let row = 0; row < template.length; row++) {
+function updateGridFromTemplate(template) {
+  for (let row = 0; row < GRID.length; row++) {
     for (let col = 0; col < GRID[row].length; col++) {
       const cell = GRID[row][col];
       cell.checked = template[row][col] ? true : false;
@@ -103,14 +130,22 @@ function updateGrid(template) {
   }
 }
 
-// Code from: https://www.sitepoint.com/delay-sleep-pause-wait/
-async function animateGrid(nSteps = 30, msDelayBetween = 333, gridSize = 21) {
-  do {
-    makeGrid(gridSize);
-    await sleep(msDelayBetween);
-  } while (--nSteps > 0);
+async function animateGrid() {
+  const playButton = document.querySelector('#play');
+  const animationDelay = 333;
+
+  while (playButton.dataset.play == 'true') {
+    theNextGeneration();
+    await sleep(animationDelay);
+  }
 }
 
+// Code from: https://www.sitepoint.com/delay-sleep-pause-wait/
 function sleep(milliseconds) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+function makeRandomTemplate(size) {
+  let arr = Array(size).fill(Array(size).fill(0));
+  return arr.map((row) => row.map((col) => random()));
 }

@@ -86,7 +86,7 @@ button:active {
   outline: none;
   background-color: #b6c0d2;
   cursor: pointer;
-  transition: background-color 0.333s ease;
+  transition: background-color 0.25s ease;
 }
 
 .cell:checked {
