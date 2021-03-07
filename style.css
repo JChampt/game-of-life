@@ -31,7 +31,7 @@ a {
 }
 
 h1 {
-  margin: 10px;
+  margin: 8px;
   text-transform: uppercase;
   color: #455268;
 }
@@ -59,7 +59,7 @@ button {
 
 #controls {
   position: relative;
-  padding: 10px;
+  margin: 8px;
 }
 
 button:hover {
@@ -71,14 +71,8 @@ button:active {
   transform: translateY(4px);
 }
 
-#generation {
-  position: absolute;
-  right: -180px;
-  top: 0;
-}
-
 #grid {
-  margin: 10px;
+  margin: 8px;
   border-radius: 8px;
   box-shadow: 3px 3px 15px -1px rgba(69, 82, 104, 0.15);
   padding: 15px;
