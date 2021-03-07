@@ -1,8 +1,18 @@
 /* 
-TODO: makeGrid could/should be a class. The constructor could accept a size,
+TODO/Thoughts: makeGrid could/should be a class. The constructor could accept a size,
 update create the DOM elements and add them to the DOM, then return an 
 2d Array containing pointers to all of the cells;
 
+Check for life ending and display a counter like, 'life ended in x generations'
+
+Disco Mode:
+  Checkbox to toggle on/off
+  Do cool neon disco colors, and probably a dark background
+  Play a disco song
+  It would be cool to have some specific patterns that play
+  I could use some classic Conway patterns + a random one and
+  just choose a pattern randomly when running Dmode
+  Sync the generation changes to the beat of the disco song!  =)
  */
 
 let GRID;
@@ -91,8 +101,7 @@ function theNextGeneration() {
   updateGridFromTemplate(makeNextGenTemplate());
 
   function updateGridFromTemplate(template) {
-    for (const [row, col] of stepThroughGrid()) {
-      const cell = GRID[row][col];
+    for (const [cell, row, col] of stepThroughGrid()) {
       cell.checked = template[row][col] ? true : false;
     }
   }
@@ -102,8 +111,7 @@ function theNextGeneration() {
       .fill(0)
       .map(() => Array(GRID.length).fill(0));
 
-    for (const [row, col] of stepThroughGrid()) {
-      const cell = GRID[row][col];
+    for (const [cell, row, col] of stepThroughGrid()) {
       let cellTotal = getCellTotal(cell);
 
       if (cell.checked) {
@@ -133,15 +141,13 @@ function theNextGeneration() {
 }
 
 function clearGrid() {
-  for (const [row, col] of stepThroughGrid()) {
-    const cell = GRID[row][col];
+  for (const [cell] of stepThroughGrid()) {
     cell.checked = false;
   }
 }
 
 function resetGrid() {
-  for (const [row, col] of stepThroughGrid()) {
-    const cell = GRID[row][col];
+  for (const [cell] of stepThroughGrid()) {
     cell.checked = random() ? true : false;
   }
 }
@@ -149,7 +155,7 @@ function resetGrid() {
 function* stepThroughGrid() {
   for (let row = 0; row < GRID.length; row++) {
     for (let col = 0; col < GRID[row].length; col++) {
-      yield [row, col];
+      yield [GRID[row][col], row, col];
     }
   }
 }
