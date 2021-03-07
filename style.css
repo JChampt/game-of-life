@@ -50,10 +50,15 @@ button {
   border-radius: 8px;
   box-shadow: 3px 3px 11px 0px rgba(28, 38, 60, 0.5);
 
-  height: 35px;
+  height: 40px;
+  min-width: 80px;
   font-size: 1.3rem;
   margin: 5px;
-  padding: 3px;
+  padding: 6px;
+}
+
+#controls {
+  padding: 10px;
 }
 
 button:hover {
@@ -86,7 +91,7 @@ button:active {
   outline: none;
   background-color: #b6c0d2;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.2s ease;
 }
 
 .cell:checked {
