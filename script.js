@@ -1,7 +1,11 @@
 /* 
-TODO/Thoughts: makeGrid could/should be a class. The constructor could accept a size,
-update create the DOM elements and add them to the DOM, then return a 
-2d Array containing pointers to all of the cells;
+TODO/Thoughts: 
+
+AddEventListeners for keybindings link ENTER and SPACE
+
+MakeGrid could/should be a class. The constructor could accept a size,
+  update create the DOM elements and add them to the DOM, then return a 
+  2d Array containing pointers to all of the cells;
 
 Check for life ending and display a counter like, 'life ended in x generations'?
   this could be costly in terms of calculations though
