@@ -16,6 +16,7 @@ Disco Mode:
  */
 
 let GRID;
+let generationCounter = 0;
 
 makeGrid(21);
 addControlListeners();
@@ -99,6 +100,9 @@ async function animateGrid() {
 
 function theNextGeneration() {
   updateGridFromTemplate(makeNextGenTemplate());
+  generationCounter++;
+  // console.log('generation:', generationCounter);
+  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 
   function updateGridFromTemplate(template) {
     for (const [cell, row, col] of stepThroughGrid()) {
@@ -135,6 +139,7 @@ function theNextGeneration() {
       .concat(rowOn, rowBelow)
       .reduce((total, foo) => total + (foo.checked == true ? 1 : 0), 0);
   }
+
   function getCellLocation(cell) {
     return cell.id.split(':').map(Number);
   }
@@ -144,12 +149,16 @@ function clearGrid() {
   for (const [cell] of stepThroughGrid()) {
     cell.checked = false;
   }
+  generationCounter = 0;
+  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 }
 
 function resetGrid() {
   for (const [cell] of stepThroughGrid()) {
     cell.checked = random() ? true : false;
   }
+  generationCounter = 0;
+  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 }
 
 function* stepThroughGrid() {
