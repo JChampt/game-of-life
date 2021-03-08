@@ -5,8 +5,8 @@ responsiveMakeGrid();
 addControlListeners();
 
 function responsiveMakeGrid() {
-  const smallScreen = window.matchMedia('(max-width: 450px)');
-  const mediumScreen = window.matchMedia('(max-width: 800px)');
+  const smallScreen = window.matchMedia('(max-width: 560px)');
+  const mediumScreen = window.matchMedia('(max-width: 855px)');
 
   if (smallScreen.matches) makeGrid(16, 10);
   else if (mediumScreen.matches) makeGrid(17, 15);
