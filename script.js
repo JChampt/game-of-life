@@ -3,7 +3,6 @@ let generationCounter = 0;
 
 responsiveGrid();
 addControlListeners();
-// makeGrid(21);
 
 function responsiveGrid() {
   const smallScreen = window.matchMedia('(max-width: 450px)');
@@ -28,12 +27,12 @@ function makeGrid(rows, columns) {
     document.querySelector('#grid').innerHTML = '';
   }
 
-  function makeRow(size, id) {
+  function makeRow(columns, id) {
     let row = document.createElement('div');
     row.classList = 'row';
     row.id = `r-${id}`;
 
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < columns; i++) {
       row.appendChild(makeCell(`${id}:${i}`));
     }
     return row;
@@ -107,7 +106,7 @@ function theNextGeneration() {
   function makeNextGenTemplate() {
     let template = Array(GRID.length)
       .fill(0)
-      .map(() => Array(GRID.length).fill(0));
+      .map((row) => Array(GRID[row].length).fill(0));
 
     for (const [cell, row, col] of stepThroughGrid()) {
       let cellTotal = getCellTotal(cell);
@@ -140,19 +139,27 @@ function theNextGeneration() {
 }
 
 function clearGrid() {
+  stopAnimation();
   for (const [cell] of stepThroughGrid()) {
     cell.checked = false;
   }
+}
+
+function stopAnimation() {
+  const startButton = document.querySelector('#start');
+
+  startButton.dataset.start = 'false';
+  startButton.innerText = 'Start';
+
   generationCounter = 0;
   document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 }
 
 function resetGrid() {
+  stopAnimation();
   for (const [cell] of stepThroughGrid()) {
     cell.checked = random() ? true : false;
   }
-  generationCounter = 0;
-  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 }
 
 function* stepThroughGrid() {
