@@ -1,35 +1,3 @@
-/* 
-TODO/Thoughts: 
-
-AddEventListeners for keybindings link ENTER and SPACE
-
-MakeGrid could/should be a class. The constructor could accept a size,
-  update create the DOM elements and add them to the DOM, then return a 
-  2d Array containing pointers to all of the cells;
-
-Check for life ending and display a counter like, 'life ended in x generations'?
-  this could be costly in terms of calculations though
-
-Disco Mode:
-  Checkbox to toggle on/off
-  Do cool neon disco colors, and probably a dark background
-  Play a disco song
-  It would be cool to have some specific patterns that play
-  I could use some classic Conway patterns + a random one and
-  just choose a pattern randomly when running Dmode
-  Sync the generation changes to the beat of the disco song!  =)
-
-Load specific patterns?  It could be cool to store and load specifict cool patterns
-  into the grid.  There should be a UI component to this.
-
-Add licence to website and code.  Find out if GNU public is the way to go or 
-  maybe something a bit more forgiving.  Make sure my name is on the page and code.
-
-Contact me in the footer:  I could link to my github, and maybe have an email me link.
-  I am not 100% sure if I want my personal gmail address to be public or not, so I may need 
-  to create a 'buisness email' or something.  
- */
-
 let GRID;
 let generationCounter = 0;
 

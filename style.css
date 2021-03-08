@@ -1,11 +1,4 @@
-/* 
-Thoughts/TODO: 
-  Consider adding animations to the cells.  
-  It would be cool to see them 'grow' from a point to fill the circle?
-  This may help with that: https://www.w3schools.com/howto/howto_css_animate_buttons.asp
-
-  Color palette: https://www.colorcombos.com/color-schemes/221/ColorCombo221.html
- */
+/* Color palette: https://www.colorcombos.com/color-schemes/221/ColorCombo221.html */
 
 * {
   box-sizing: border-box;
