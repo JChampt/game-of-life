@@ -1,8 +1,14 @@
 let GRID;
 let generationCounter = 0;
 
-makeGrid(21);
+responsiveGrid();
+// makeGrid(21);
 addControlListeners();
+
+function responsiveGrid() {
+  let screen = window.matchMedia('(max-width: 800px)');
+  makeGrid(screen.matches ? 15 : 21);
+}
 
 function makeGrid(size) {
   const grid = document.querySelector('#grid');
