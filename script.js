@@ -9,17 +9,19 @@ function responsiveGrid() {
   const smallScreen = window.matchMedia('(max-width: 450px)');
   const mediumScreen = window.matchMedia('(max-width: 800px)');
 
-  if (smallScreen.matches) makeGrid(10);
-  else if (mediumScreen.matches) makeGrid(15);
-  else makeGrid(23);
+  if (smallScreen.matches) makeGrid(14, 10);
+  else if (mediumScreen.matches) makeGrid(17, 15);
+  else makeGrid(23, 23);
 }
 
-function makeGrid(size) {
+function makeGrid(rows, columns) {
   const grid = document.querySelector('#grid');
   deleteGrid();
-  for (let i = 0; i < size; i++) {
-    grid.appendChild(makeRow(size, i));
+
+  for (let i = 0; i < rows; i++) {
+    grid.appendChild(makeRow(columns, i));
   }
+
   GRID = mapGrid();
 
   function deleteGrid() {
