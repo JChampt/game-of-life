@@ -1,10 +1,10 @@
 let GRID;
 let generationCounter = 0;
 
-responsiveGrid();
+responsiveMakeGrid();
 addControlListeners();
 
-function responsiveGrid() {
+function responsiveMakeGrid() {
   const smallScreen = window.matchMedia('(max-width: 450px)');
   const mediumScreen = window.matchMedia('(max-width: 800px)');
 
@@ -66,15 +66,39 @@ function addControlListeners() {
 
   const resetButton = document.querySelector('#reset');
   resetButton.addEventListener('click', resetGrid);
-}
 
-function startAnimation() {
-  const startButton = document.querySelector('#start');
+  function startAnimation() {
+    const startButton = document.querySelector('#start');
 
-  startButton.dataset.start = startButton.dataset.start === 'false' ? 'true' : 'false';
-  startButton.innerText = startButton.innerText === 'Start' ? 'Stop' : 'Start';
+    startButton.dataset.start = startButton.dataset.start === 'false' ? 'true' : 'false';
+    startButton.innerText = startButton.innerText === 'Start' ? 'Stop' : 'Start';
 
-  if (startButton.dataset.start === 'true') animateGrid();
+    if (startButton.dataset.start === 'true') animateGrid();
+  }
+
+  function clearGrid() {
+    stopAnimationAndResetCounter();
+    for (const [cell] of stepThroughGrid()) {
+      cell.checked = false;
+    }
+  }
+
+  function stopAnimationAndResetCounter() {
+    const startButton = document.querySelector('#start');
+
+    startButton.dataset.start = 'false';
+    startButton.innerText = 'Start';
+
+    generationCounter = 0;
+    document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
+  }
+
+  function resetGrid() {
+    stopAnimationAndResetCounter();
+    for (const [cell] of stepThroughGrid()) {
+      cell.checked = random() ? true : false;
+    }
+  }
 }
 
 async function animateGrid() {
@@ -135,30 +159,6 @@ function theNextGeneration() {
 
   function getCellLocation(cell) {
     return cell.id.split(':').map(Number);
-  }
-}
-
-function clearGrid() {
-  stopAnimation();
-  for (const [cell] of stepThroughGrid()) {
-    cell.checked = false;
-  }
-}
-
-function stopAnimation() {
-  const startButton = document.querySelector('#start');
-
-  startButton.dataset.start = 'false';
-  startButton.innerText = 'Start';
-
-  generationCounter = 0;
-  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
-}
-
-function resetGrid() {
-  stopAnimation();
-  for (const [cell] of stepThroughGrid()) {
-    cell.checked = random() ? true : false;
   }
 }
 
