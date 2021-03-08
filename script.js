@@ -9,9 +9,9 @@ function responsiveGrid() {
   const smallScreen = window.matchMedia('(max-width: 450px)');
   const mediumScreen = window.matchMedia('(max-width: 800px)');
 
-  if (smallScreen.matches) makeGrid(11);
+  if (smallScreen.matches) makeGrid(10);
   else if (mediumScreen.matches) makeGrid(15);
-  else makeGrid(21);
+  else makeGrid(23);
 }
 
 function makeGrid(size) {
