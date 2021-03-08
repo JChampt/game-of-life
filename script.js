@@ -7,7 +7,7 @@ addControlListeners();
 
 function responsiveGrid() {
   let screen = window.matchMedia('(max-width: 800px)');
-  makeGrid(screen.matches ? 15 : 21);
+  makeGrid(screen.matches ? 11 : 21);
 }
 
 function makeGrid(size) {
