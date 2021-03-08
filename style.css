@@ -91,3 +91,13 @@ button:active {
 .cell:checked {
   background-color: chartreuse;
 }
+
+@media only screen and (max-width: 450px) {
+  #grid {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}

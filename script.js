@@ -2,12 +2,16 @@ let GRID;
 let generationCounter = 0;
 
 responsiveGrid();
-// makeGrid(21);
 addControlListeners();
+// makeGrid(21);
 
 function responsiveGrid() {
-  let screen = window.matchMedia('(max-width: 800px)');
-  makeGrid(screen.matches ? 9 : 21);
+  const smallScreen = window.matchMedia('(max-width: 450px)');
+  const mediumScreen = window.matchMedia('(max-width: 800px)');
+
+  if (smallScreen.matches) makeGrid(11);
+  else if (mediumScreen.matches) makeGrid(15);
+  else makeGrid(21);
 }
 
 function makeGrid(size) {
