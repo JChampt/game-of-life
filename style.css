@@ -67,7 +67,7 @@ button:active {
   cursor: pointer;
 
   background-color: #b6c0d2;
-  transition: background-color calc(1s / 6) ease;
+  transition: background-color calc(1s / 7.5) ease;
 }
 
 .cell:checked {
