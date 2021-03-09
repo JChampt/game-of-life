@@ -6,11 +6,13 @@ addControlListeners();
 
 function sizeToScreen() {
   const cellSize = 35;
-  const topAndBottomBuffer = 150;
-  const width = visualViewport.width;
-  const height = visualViewport.height - topAndBottomBuffer;
+  const verticalBuffer = 160;
+  const horizontalBuffer = 35;
 
-  return [Math.floor(height / cellSize) - 1, Math.floor(width / cellSize) - 1];
+  return [
+    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
+    Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
+  ];
 }
 
 function responsiveMakeGrid() {
