@@ -4,6 +4,15 @@ let generationCounter = 0;
 responsiveMakeGrid();
 addControlListeners();
 
+function sizeToScreen() {
+  const cellSize = 35;
+  const topAndBottomBuffer = 150;
+  const width = visualViewport.width;
+  const height = visualViewport.height - topAndBottomBuffer;
+
+  return [Math.floor(height / cellSize) - 1, Math.floor(width / cellSize) - 1];
+}
+
 function responsiveMakeGrid() {
   const smallScreen = window.matchMedia('(max-width: 560px)');
   const mediumScreen = window.matchMedia('(max-width: 855px)');
@@ -68,12 +77,13 @@ function addControlListeners() {
   resetButton.addEventListener('click', resetGrid);
 
   function startAnimation() {
-    const startButton = document.querySelector('#start');
+    const button = document.querySelector('#start');
+    const icon = button.children[0];
 
-    startButton.dataset.start = startButton.dataset.start === 'false' ? 'true' : 'false';
-    startButton.innerText = startButton.innerText === 'Start' ? 'Stop' : 'Start';
+    button.dataset.start = button.dataset.start === 'false' ? 'true' : 'false';
+    icon.innerText = icon.innerText == 'play_arrow' ? 'stop' : 'play_arrow';
 
-    if (startButton.dataset.start === 'true') animateGrid();
+    if (button.dataset.start === 'true') animateGrid();
   }
 
   function clearGrid() {
@@ -87,7 +97,7 @@ function addControlListeners() {
     const startButton = document.querySelector('#start');
 
     startButton.dataset.start = 'false';
-    startButton.innerText = 'Start';
+    startButton.children[0].innerText = 'play_arrow';
 
     generationCounter = 0;
     document.querySelector('#generation').innerText = `generation: ${generationCounter}`;

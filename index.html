@@ -5,38 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>Conway's Game of Life</title>
   </head>
 
   <body>
     <header>
-      <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">
-        <h1>Conway’s</h1>
-        <h2>Game of Life</h2>
-      </a>
+      <h1>Conway’s</h1>
+      <h2>Game of Life</h2>
     </header>
 
     <main>
       <div id="generation">generation: 0</div>
       <div id="grid"></div>
-
-      <aside id="controls">
-        <button id="start" data-start="false">Start</button>
-        <button id="clear">Clear</button>
-        <button id="reset">Reset</button>
-        <button id="next">Next</button>
-      </aside>
-
-      <div id="how-to"></div>
+      <div id="controls">
+        <button id="start" data-start="false">
+          <span class="material-icons"> play_arrow </span>
+        </button>
+        <button id="next">
+          <span class="material-icons"> arrow_forward_ios </span>
+        </button>
+        <button id="clear">
+          <span class="material-icons"> clear </span>
+        </button>
+        <button id="reset">
+          <span class="material-icons"> restart_alt </span>
+        </button>
+      </div>
     </main>
 
-    <footer>
+    <aside id="how-to">
+      <h2>
+        <span class="material-icons"> arrow_drop_down_circle </span>
+        How to Play
+      </h2>
       <p>
-        A JChampt Joint
-        <img src="./github-brands.svg" alt="" />
+        To play, click the start button or on any individual cells to turn them "on."
+        Click Next to see only the next step in the game or hit Start to see it play out!
+        Clear to clear your progress or reset to get a completely new board.
       </p>
+      <p>
+        You can see some interesting example patterns to play with here, or read about why
+        it's mathmematically interesting here.
+      </p>
+    </aside>
+
+    <footer>
+      <p>A JChampt Joint</p>
       <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
+      <br />
+      <a href="https://github.com/JChampt" target="_blank">
+        <img src="./images/github-brands.svg" alt="" />
+      </a>
     </footer>
   </body>
 
