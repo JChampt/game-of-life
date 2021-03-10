@@ -2,18 +2,24 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  height: 100vh;
 
   background-color: #ffffff;
   color: #313c53;
-}
 
-header {
-  color: #455268;
+  display: grid;
+  justify-items: center;
+  gap: 1rem 0px;
+  grid-template-areas:
+    'header'
+    'main'
+    'how-to'
+    'footer';
 }
 
 a {
@@ -21,30 +27,18 @@ a {
   color: inherit;
 }
 
-button {
-  outline: none;
-  cursor: pointer;
-  background-color: #455268;
-  color: #ffffff;
-
-  border: 2px solid #313c53;
-  border-radius: 8px;
-  box-shadow: 3px 3px 11px 0px rgba(28, 38, 60, 0.5);
-
-  height: 40px;
-  min-width: 80px;
-  font-size: 1.3rem;
-  margin: 5px;
-  padding: 6px;
+header {
+  grid-area: header;
+  color: #455268;
 }
 
-button:hover {
-  background: #313c53;
+.subtitle {
+  font-size: 1.2rem;
 }
 
-button:active {
-  box-shadow: 1px 1px 10px 0px rgba(28, 38, 60, 0.6);
-  transform: translateY(4px);
+main {
+  grid-area: main;
+  text-align: center;
 }
 
 #grid {
@@ -74,9 +68,73 @@ button:active {
   background-color: chartreuse;
 }
 
-footer img {
-  height: 24px;
-  width: 24px;
+button {
+  outline: none;
+  cursor: pointer;
+  background-color: #455268;
+  color: #ffffff;
+
+  border: 2px solid #313c53;
+  border-radius: 8px;
+  box-shadow: 3px 3px 11px 0px rgba(28, 38, 60, 0.5);
+
+  font-size: 1.3rem;
+}
+
+button:hover {
+  background: #313c53;
+}
+
+button:active {
+  box-shadow: 1px 1px 10px 0px rgba(28, 38, 60, 0.6);
+  transform: translateY(4px);
+}
+
+#how-to {
+  grid-area: how-to;
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr;
+  gap: 0.8rem 0px;
+  grid-template-areas:
+    'button header .'
+    '. p1 .'
+    '. p2 .';
+}
+
+#how-to * {
+  margin-left: 0.7rem;
+}
+
+#how-to span {
+  grid-area: button;
+  justify-self: end;
+}
+
+#how-to h2 {
+  grid-area: header;
+}
+
+#how-to #p1 {
+  grid-area: p1;
+}
+
+#how-to #p2 {
+  grid-area: p2;
+}
+
+footer {
+  grid-area: footer;
+  width: 100%;
+  background-color: #455268;
+  color: white;
+}
+
+.fab {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
 }
 
 @media only screen and (max-width: 575px) {

@@ -10,7 +10,7 @@ function sizeGridToScreen() {
 
 function getMaxGridSize() {
   const cellSize = 35;
-  const verticalBuffer = 100;
+  const verticalBuffer = 75;
   const horizontalBuffer = 10;
 
   return [
@@ -23,7 +23,7 @@ function responsiveMakeGrid() {
   const smallScreen = window.matchMedia('(max-width: 560px)');
   const mediumScreen = window.matchMedia('(max-width: 855px)');
 
-  if (smallScreen.matches) makeGrid(16, 10);
+  if (smallScreen.matches) makeGrid(15, 10);
   else if (mediumScreen.matches) makeGrid(17, 15);
   else makeGrid(23, 23);
 }

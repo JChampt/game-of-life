@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Conway's Game of Life</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <title>Conway's Game of Life</title>
+    <script
+      src="https://kit.fontawesome.com/48b569a427.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <header>
-      <h1>Conway’s<br />Game of Life</h1>
+      <h1>Conway’s<br /><span class="subheading">Game of Life</span></h1>
     </header>
 
     <main>
@@ -40,24 +44,27 @@
     <aside id="how-to">
       <span class="material-icons"> arrow_drop_down_circle </span>
       <h2>How to Play</h2>
-      <p>
+      <p id="p1">
         To play, click the start button or on any individual cells to turn them "on."
         Click Next to see only the next step in the game or hit Start to see it play out!
         Clear to clear your progress or reset to get a completely new board.
       </p>
-      <p>
+      <p id="p2">
         You can see some interesting example patterns to play with here, or read about why
         it's mathmematically interesting here.
       </p>
     </aside>
 
     <footer>
-      <p>A JChampt Joint</p>
-      <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
-      <br />
-      <a href="https://github.com/JChampt" target="_blank">
-        <img src="./images/github-brands.svg" alt="github logo" />
-      </a>
+      <address>
+        A JChampt Joint
+        <br />
+        <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
+        <br />
+        <a href="https://github.com/JChampt" target="_blank">
+          <i class="fab fa-github-alt"></i>
+        </a>
+      </address>
     </footer>
   </body>
   <script src="./script.js"></script>
