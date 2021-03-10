@@ -4,10 +4,14 @@ let generationCounter = 0;
 responsiveMakeGrid();
 addControlListeners();
 
-function sizeToScreen() {
+function sizeGridToScreen() {
+  makeGrid(...getMaxGridSize());
+}
+
+function getMaxGridSize() {
   const cellSize = 35;
-  const verticalBuffer = 160;
-  const horizontalBuffer = 35;
+  const verticalBuffer = 100;
+  const horizontalBuffer = 10;
 
   return [
     Math.floor((visualViewport.height - verticalBuffer) / cellSize),

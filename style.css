@@ -80,7 +80,7 @@ footer img {
 }
 
 @media only screen and (max-width: 575px) {
-  #grid {
-    padding: 8px;
-  }
+  /*   #grid {
+    padding: 5px;
+  } */
 }
