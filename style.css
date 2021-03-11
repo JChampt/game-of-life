@@ -153,6 +153,7 @@ button:active {
 #p1,
 #p2 {
   max-height: 0px;
+  max-width: 475px;
   overflow: hidden;
   transition: max-height 0.75s ease;
 }
@@ -176,8 +177,37 @@ footer {
   margin-top: 3px;
 }
 
-@media only screen and (max-width: 575px) {
-  /*   #grid {
-    padding: 5px;
-  } */
+@media only screen and (min-width: 864px) {
+  body {
+    font-size: 1.1rem;
+    grid-template-areas:
+      'header'
+      'how-to'
+      'main'
+      'footer';
+  }
+
+  header {
+    font-size: 1.5em;
+  }
+
+  #how-to-button {
+    display: none;
+  }
+
+  #how-to h2 {
+    display: none;
+  }
+
+  #p1,
+  #p2 {
+    max-height: 1000px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    height: 300px;
+    margin-top: 175px;
+  }
 }
