@@ -120,8 +120,8 @@ button:active {
   align-items: center;
 
   grid-template-columns: 1fr 6fr 1fr;
-  grid-template-rows: 1fr 3fr 2fr;
-  gap: 0.8rem 0px;
+  grid-template-rows: 1fr min-content min-content;
+  gap: 0.6rem 0px;
   grid-template-areas:
     'button header .'
     '. p1 .'
@@ -132,22 +132,29 @@ button:active {
   margin-left: 0.7rem;
 }
 
-#how-to #how-to-button {
+#how-to-button {
   grid-area: button;
   justify-self: end;
-  /* transform: rotate(180deg); */
+  transition: transform 0.5s ease;
 }
 
 #how-to h2 {
   grid-area: header;
 }
 
-#how-to #p1 {
+#p1 {
   grid-area: p1;
 }
 
-#how-to #p2 {
+#p2 {
   grid-area: p2;
+}
+
+#p1,
+#p2 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.75s ease;
 }
 
 footer {
@@ -160,7 +167,6 @@ footer {
   background-color: #455268;
   color: white;
 
-  margin-top: 1rem;
   padding-top: 2rem;
   padding-left: 10%;
 }

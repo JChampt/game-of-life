@@ -4,30 +4,9 @@ let generationCounter = 0;
 responsiveMakeGrid();
 addControlListeners();
 
-function sizeGridToScreen() {
-  makeGrid(...getMaxGridSize());
-}
-
-function getMaxGridSize() {
-  const cellSize = 35;
-  const verticalBuffer = 100;
-  const horizontalBuffer = 15;
-
-  return [
-    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
-    Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
-  ];
-}
-
 function responsiveMakeGrid() {
-  if (window.matchMedia('(max-width: 864px)').matches) sizeGridToScreen();
+  if (window.matchMedia('(max-width: 864px)').matches) makeGrid(...getMaxGridSize());
   else makeGrid(23, 23);
-  /*   const smallScreen = window.matchMedia('(max-width: 560px)');
-  const mediumScreen = window.matchMedia('(max-width: 855px)');
-
-  if (smallScreen.matches) makeGrid(15, 10);
-  else if (mediumScreen.matches) makeGrid(17, 15);
-  else makeGrid(23, 23); */
 }
 
 function makeGrid(rows, columns) {
@@ -71,6 +50,17 @@ function makeGrid(rows, columns) {
   }
 }
 
+function getMaxGridSize() {
+  const cellSize = 35;
+  const verticalBuffer = 100;
+  const horizontalBuffer = 10;
+
+  return [
+    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
+    Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
+  ];
+}
+
 function addControlListeners() {
   const startButton = document.querySelector('#start');
   startButton.addEventListener('click', startAnimation);
@@ -85,9 +75,8 @@ function addControlListeners() {
   resetButton.addEventListener('click', resetGrid);
 
   const howToButton = document.querySelector('#how-to-button');
+  howToButton.style.transform = 'rotate(0deg)';
   howToButton.addEventListener('click', howTo);
-
-  function howTo() {}
 
   function startAnimation() {
     const button = document.querySelector('#start');
@@ -121,6 +110,21 @@ function addControlListeners() {
     for (const [cell] of stepThroughGrid()) {
       cell.checked = random() ? true : false;
     }
+  }
+
+  function howTo() {
+    const p1 = document.querySelector('#p1').style;
+    const p2 = document.querySelector('#p2').style;
+    const button = document.querySelector('#how-to-button').style;
+
+    if (p1.maxHeight == '1000px') {
+      [p1.maxHeight, p2.maxHeight] = ['0px', '0px'];
+    } else {
+      [p1.maxHeight, p2.maxHeight] = ['1000px', '1000px'];
+    }
+
+    button.transform =
+      button.transform == 'rotate(0deg)' ? 'rotate(-180deg)' : 'rotate(0deg)';
   }
 }
 
