@@ -10,8 +10,8 @@ function sizeGridToScreen() {
 
 function getMaxGridSize() {
   const cellSize = 35;
-  const verticalBuffer = 75;
-  const horizontalBuffer = 10;
+  const verticalBuffer = 100;
+  const horizontalBuffer = 15;
 
   return [
     Math.floor((visualViewport.height - verticalBuffer) / cellSize),
@@ -20,12 +20,14 @@ function getMaxGridSize() {
 }
 
 function responsiveMakeGrid() {
-  const smallScreen = window.matchMedia('(max-width: 560px)');
+  if (window.matchMedia('(max-width: 864px)').matches) sizeGridToScreen();
+  else makeGrid(23, 23);
+  /*   const smallScreen = window.matchMedia('(max-width: 560px)');
   const mediumScreen = window.matchMedia('(max-width: 855px)');
 
   if (smallScreen.matches) makeGrid(15, 10);
   else if (mediumScreen.matches) makeGrid(17, 15);
-  else makeGrid(23, 23);
+  else makeGrid(23, 23); */
 }
 
 function makeGrid(rows, columns) {
@@ -81,6 +83,11 @@ function addControlListeners() {
 
   const resetButton = document.querySelector('#reset');
   resetButton.addEventListener('click', resetGrid);
+
+  const howToButton = document.querySelector('#how-to-button');
+  howToButton.addEventListener('click', howTo);
+
+  function howTo() {}
 
   function startAnimation() {
     const button = document.querySelector('#start');
