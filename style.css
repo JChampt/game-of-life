@@ -106,13 +106,15 @@ button {
   color: #313c53;
 }
 
-button:hover {
-  background: #455268;
-  color: white;
-}
-
-button:hover > .material-icons {
-  color: white;
+@media (hover: hover) {
+  /* make hover only active on non-mobile*/
+  button:hover {
+    background: #455268;
+    color: white;
+  }
+  button:hover > .material-icons {
+    color: white;
+  }
 }
 
 button:active {
@@ -163,7 +165,6 @@ button:active {
 #p1,
 #p2 {
   max-height: 0px;
-  max-width: 475px;
   overflow: hidden;
   transition: max-height 0.75s ease;
 }
@@ -234,6 +235,7 @@ footer * {
   #p1,
   #p2 {
     max-height: 1000px;
+    max-width: 475px;
     text-align: center;
     margin-bottom: 15px;
   }
