@@ -27,19 +27,19 @@
       <div id="grid"></div>
       <div id="controls">
         <button id="start" data-start="false">
-          <span class="desktop-only">Start</span>
+          <span class="desktop">Start</span>
           <span class="material-icons md-size"> play_arrow </span>
         </button>
         <button id="next">
-          <span class="desktop-only">Next</span>
+          <span class="desktop">Next</span>
           <span class="material-icons md-size"> arrow_forward_ios </span>
         </button>
         <button id="clear">
-          <span class="desktop-only">Clear</span>
+          <span class="desktop">Clear</span>
           <span class="material-icons md-size"> clear </span>
         </button>
         <button id="reset">
-          <span class="desktop-only">Reset</span>
+          <span class="desktop">Reset</span>
           <span class="material-icons md-size"> restart_alt </span>
         </button>
       </div>
@@ -60,12 +60,22 @@
     </aside>
 
     <footer>
-      <address>
+      <address class="mobile">
         A JChampt Joint
         <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
         <a href="https://github.com/JChampt" target="_blank">
           <i class="fab fa-github-alt"></i>
         </a>
+      </address>
+      <address class="desktop">
+        <hr />
+        A JChampt Joint
+        <span class="dot"></span>
+        <a href="https://github.com/JChampt" target="_blank">
+          <i class="fab fa-github-alt"></i>
+        </a>
+        <span class="dot"></span>
+        <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
       </address>
     </footer>
   </body>

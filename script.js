@@ -99,10 +99,10 @@ function addControlListeners() {
 
   function stopAnimationAndResetCounter() {
     const startButton = document.querySelector('#start');
-    const text = button.children[0];
+    const text = startButton.children[0];
 
     startButton.dataset.start = 'false';
-    text.innerText = text.innerText == 'Start' ? 'Stop' : 'Start';
+    text.innerText = 'Start';
     startButton.children[1].innerText = 'play_arrow';
 
     generationCounter = 0;

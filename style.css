@@ -120,7 +120,7 @@ button:active {
   transform: translateY(4px);
 }
 
-.desktop-only {
+.desktop {
   display: none;
 }
 
@@ -186,6 +186,14 @@ footer * {
   display: block;
 }
 
+.dot {
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 .fab {
   font-size: 1.5rem;
   margin-top: 3px;
@@ -205,8 +213,12 @@ footer * {
     font-size: 1.5em;
   }
 
-  .desktop-only {
+  .desktop {
     display: inline;
+  }
+
+  .mobile {
+    display: none;
   }
 
   .material-icons.md-size {
@@ -237,5 +249,13 @@ footer * {
 
   footer * {
     display: inline;
+    margin: 5px;
+    margin-top: 40px;
+  }
+
+  hr {
+    display: block;
+    width: 375px;
+    margin: 0 auto;
   }
 }
