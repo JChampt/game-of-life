@@ -1,10 +1,6 @@
-let GRID;
-let generationCounter = 0;
+import { GRID, generationCounter } from './index';
 
-responsiveMakeGrid();
-addControlListeners();
-
-function responsiveMakeGrid() {
+export default function responsiveMakeGrid() {
   if (window.matchMedia('(max-width: 864px)').matches) makeGrid(...getMaxGridSize());
   else makeGrid(23, 23);
 }
@@ -133,3 +129,5 @@ function* stepThroughGrid() {
 function random() {
   return Math.round(Math.random());
 }
+
+export { theNextGeneration, animateGrid, stepThroughGrid, random };

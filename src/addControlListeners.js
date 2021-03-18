@@ -1,4 +1,7 @@
-function addControlListeners() {
+import { animateGrid, theNextGeneration, stepThroughGrid, random } from './script';
+import { generationCounter } from './index';
+
+export default function addControlListeners() {
   const startButton = document.querySelector('#start');
   startButton.addEventListener('click', startAnimation);
 
