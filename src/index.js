@@ -1,5 +1,5 @@
-import responsiveMakeGrid from './makeGrid';
-import addControlListeners from './addControlListeners';
+import responsiveMakeGrid from './javascript/makeGrid';
+import addControlListeners from './javascript/addControlListeners';
 
 // Global varialbles used by multiple modules
 let GRID;

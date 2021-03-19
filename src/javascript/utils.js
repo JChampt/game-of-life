@@ -1,4 +1,4 @@
-import { GRID } from './index';
+import { GRID } from '../index';
 
 export function* stepThroughGrid() {
   for (let row = 0; row < GRID.length; row++) {
