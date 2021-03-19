@@ -18,9 +18,7 @@ async function animateGrid() {
 
 function theNextGeneration() {
   updateGridFromTemplate(makeNextGenTemplate());
-  let generationCounter = document.querySelector('#generation').innerText.match(/\d+/)[0];
-  +generationCounter++;
-  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
+  incGenCounter();
 }
 
 function updateGridFromTemplate(template) {
@@ -61,6 +59,11 @@ function getCellTotal(cell) {
 
 function getCellLocation(cell) {
   return cell.id.split(':').map(Number);
+}
+
+const generation = document.querySelector('#generation');
+function incGenCounter() {
+  generation.innerText = generation.innerText.replace(/\d+/, (x) => +x + 1);
 }
 
 export { animateGrid, theNextGeneration };
