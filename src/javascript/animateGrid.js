@@ -1,7 +1,7 @@
-import { GRID, generationCounter } from '../index';
+import { GRID } from './makeGrid';
 import { stepThroughGrid } from './utils';
 
-export async function animateGrid() {
+async function animateGrid() {
   const startButton = document.querySelector('#start');
   const animationDelay = 333;
 
@@ -16,9 +16,10 @@ export async function animateGrid() {
   }
 }
 
-export function theNextGeneration() {
+function theNextGeneration() {
   updateGridFromTemplate(makeNextGenTemplate());
-  generationCounter++;
+  let generationCounter = document.querySelector('#generation').innerText.match(/\d+/)[0];
+  +generationCounter++;
   document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
 }
 
@@ -61,3 +62,5 @@ function getCellTotal(cell) {
 function getCellLocation(cell) {
   return cell.id.split(':').map(Number);
 }
+
+export { animateGrid, theNextGeneration };

@@ -1,8 +1,7 @@
 import { stepThroughGrid, random } from './utils';
 import { animateGrid, theNextGeneration } from './animateGrid';
-import { generationCounter } from '../index';
 
-export default function addControlListeners() {
+function addControlListeners() {
   const startButton = document.querySelector('#start');
   startButton.addEventListener('click', startAnimation);
 
@@ -47,8 +46,7 @@ function stopAnimationAndResetCounter() {
   text.innerText = 'Start';
   startButton.children[1].innerText = 'play_arrow';
 
-  generationCounter = 0;
-  document.querySelector('#generation').innerText = `generation: ${generationCounter}`;
+  document.querySelector('#generation').innerText = 'generation: 0';
 }
 
 function resetGrid() {
@@ -72,3 +70,5 @@ function howTo() {
   button.transform =
     button.transform == 'rotate(0deg)' ? 'rotate(-180deg)' : 'rotate(0deg)';
 }
+
+export { addControlListeners };

@@ -1,7 +1,8 @@
-import { GRID } from '../index';
 import { random } from './utils';
 
-export default function responsiveMakeGrid() {
+let GRID;
+
+function responsiveMakeGrid() {
   if (window.matchMedia('(max-width: 864px)').matches) makeGrid(...getMaxGridSize());
   else makeGrid(23, 23);
 }
@@ -57,3 +58,5 @@ function getMaxGridSize() {
     Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
   ];
 }
+
+export { GRID, responsiveMakeGrid };
