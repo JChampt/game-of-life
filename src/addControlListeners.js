@@ -1,4 +1,5 @@
-import { animateGrid, theNextGeneration, stepThroughGrid, random } from './script';
+import { stepThroughGrid, random } from './utils';
+import { animateGrid, theNextGeneration } from './animateGrid';
 import { generationCounter } from './index';
 
 export default function addControlListeners() {
