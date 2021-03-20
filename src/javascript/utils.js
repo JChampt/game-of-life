@@ -11,3 +11,12 @@ export function* stepThroughGrid() {
 export function random() {
   return Math.round(Math.random());
 }
+
+export function stopAnimationAndResetCounter() {
+  const startButton = document.querySelector('#start');
+
+  startButton.dataset.start = 'false';
+  startButton.children[0].innerText = 'play_arrow';
+
+  document.querySelector('#generation').innerText = 'generation: 0';
+}

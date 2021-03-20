@@ -1,5 +1,6 @@
-import { stepThroughGrid, random } from './utils';
+import { stepThroughGrid, random, stopAnimationAndResetCounter } from './utils';
 import { animateGrid, theNextGeneration } from './animateGrid';
+import { responsiveMakeGrid } from './makeGrid';
 
 function addControlListeners() {
   const startButton = document.querySelector('#start');
@@ -17,6 +18,8 @@ function addControlListeners() {
   const howToButton = document.querySelector('#how-to-button');
   howToButton.style.transform = 'rotate(0deg)';
   howToButton.addEventListener('click', howTo);
+
+  remakeGridAfterScreenResize();
 }
 
 function startAnimation() {
@@ -34,15 +37,6 @@ function clearGrid() {
   for (const [cell] of stepThroughGrid()) {
     cell.checked = false;
   }
-}
-
-function stopAnimationAndResetCounter() {
-  const startButton = document.querySelector('#start');
-
-  startButton.dataset.start = 'false';
-  startButton.children[0].innerText = 'play_arrow';
-
-  document.querySelector('#generation').innerText = 'generation: 0';
 }
 
 function resetGrid() {
@@ -67,4 +61,20 @@ function howTo() {
     button.transform == 'rotate(0deg)' ? 'rotate(-180deg)' : 'rotate(0deg)';
 }
 
-export { addControlListeners, stopAnimationAndResetCounter };
+function remakeGridAfterScreenResize() {
+  let timeOutFunctionId;
+  let screenWidth = visualViewport.width;
+
+  window.addEventListener('resize', bar);
+
+  function bar() {
+    if (visualViewport.width != screenWidth) {
+      screenWidth = visualViewport.width;
+      clearTimeout(timeOutFunctionId);
+
+      timeOutFunctionId = setTimeout(responsiveMakeGrid, 100);
+    }
+  }
+}
+
+export { addControlListeners };

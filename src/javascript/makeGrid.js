@@ -1,23 +1,6 @@
-import { random } from './utils';
-import { stopAnimationAndResetCounter } from './addControlListeners';
+import { random, stopAnimationAndResetCounter } from './utils';
 
 let GRID;
-
-if (!isMobileDevice()) window.addEventListener('resize', remakeGridAfterScreenResize);
-
-let timeOutFunctionId;
-function remakeGridAfterScreenResize() {
-  clearTimeout(timeOutFunctionId);
-  // setTimeout returns the numeric ID which is used by clearTimeOut to reset the timer
-  timeOutFunctionId = setTimeout(responsiveMakeGrid, 100);
-}
-
-function isMobileDevice() {
-  return (
-    typeof window.orientation !== 'undefined' ||
-    navigator.userAgent.indexOf('IEMobile') !== -1
-  );
-}
 
 function responsiveMakeGrid() {
   const [maxFitRows, maxFitColumns] = getMaxGridSize();
