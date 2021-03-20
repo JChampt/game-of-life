@@ -2,7 +2,7 @@ import { random } from './utils';
 
 let GRID;
 
-function sizeGridToScreen() {
+function responsiveMakeGrid() {
   const [maxFitRows, maxFitColumns] = getMaxGridSize();
   makeGrid(Math.min(maxFitRows, 23), Math.min(maxFitColumns, 27));
 }
@@ -59,4 +59,4 @@ function mapGrid() {
   );
 }
 
-export { GRID, sizeGridToScreen };
+export { GRID, responsiveMakeGrid };
