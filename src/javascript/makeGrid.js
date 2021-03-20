@@ -2,6 +2,15 @@ import { random } from './utils';
 
 let GRID;
 
+window.addEventListener('resize', remakeGridAfterScreenResize);
+
+let timeOutFunctionId;
+function remakeGridAfterScreenResize() {
+  clearTimeout(timeOutFunctionId);
+  // setTimeout returns the numeric ID which is used by clearTimeOut to reset the timer
+  timeOutFunctionId = setTimeout(responsiveMakeGrid, 100);
+}
+
 function responsiveMakeGrid() {
   const [maxFitRows, maxFitColumns] = getMaxGridSize();
   makeGrid(Math.min(maxFitRows, 23), Math.min(maxFitColumns, 27));
