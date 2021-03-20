@@ -1,4 +1,5 @@
 import { random } from './utils';
+import { stopAnimationAndResetCounter } from './addControlListeners';
 
 let GRID;
 
@@ -29,6 +30,7 @@ function getMaxGridSize() {
 
 function makeGrid(rows, columns) {
   const grid = document.querySelector('#grid');
+  stopAnimationAndResetCounter();
   deleteGrid();
 
   for (let i = 0; i < rows; i++) {

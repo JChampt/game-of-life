@@ -67,4 +67,4 @@ function howTo() {
     button.transform == 'rotate(0deg)' ? 'rotate(-180deg)' : 'rotate(0deg)';
 }
 
-export { addControlListeners };
+export { addControlListeners, stopAnimationAndResetCounter };
