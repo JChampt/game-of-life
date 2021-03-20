@@ -4,7 +4,7 @@ let GRID;
 
 function responsiveMakeGrid() {
   if (window.matchMedia('(max-width: 864px)').matches) makeGrid(...getMaxGridSize());
-  else makeGrid(23, 23);
+  else makeGrid(23, 27);
 }
 
 function makeGrid(rows, columns) {

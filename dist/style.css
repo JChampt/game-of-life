@@ -39,7 +39,6 @@ header {
   grid-area: header;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-  /* align-self: end; */
 
   margin-top: 57px;
 }
@@ -172,7 +171,11 @@ button:active {
     '. p2 .';
 }
 
-#how-to * {
+#how-to a {
+  color: #fafafa;
+}
+
+#how-to > * {
   margin-left: 0.7rem;
 }
 
@@ -209,7 +212,7 @@ button:active {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  width: 236px;
+  width: 240px;
 
   color: #725b53;
 }
@@ -229,6 +232,11 @@ footer {
 
 footer * {
   display: block;
+}
+
+.inline {
+  display: inline;
+  margin-right: 3px;
 }
 
 .dot {
@@ -266,9 +274,13 @@ footer * {
     display: none;
   }
 
+  button {
+    height: 60px;
+    width: 60px;
+  }
+
   .material-icons.md-size {
-    font-size: 32px;
-    padding-left: 8px;
+    font-size: 48px;
   }
 
   #how-to-button,

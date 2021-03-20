@@ -21,12 +21,10 @@ function addControlListeners() {
 
 function startAnimation() {
   const button = document.querySelector('#start');
-  const text = button.children[0];
-  const icon = button.children[1];
+  const icon = button.children[0];
 
   button.dataset.start = button.dataset.start === 'false' ? 'true' : 'false';
-  text.innerText = text.innerText == 'Start' ? 'Stop' : 'Start';
-  icon.innerText = icon.innerText == 'play_arrow' ? 'stop' : 'play_arrow';
+  icon.innerText = icon.innerText == 'play_arrow' ? 'pause' : 'play_arrow';
 
   if (button.dataset.start === 'true') animateGrid();
 }
@@ -40,11 +38,9 @@ function clearGrid() {
 
 function stopAnimationAndResetCounter() {
   const startButton = document.querySelector('#start');
-  const text = startButton.children[0];
 
   startButton.dataset.start = 'false';
-  text.innerText = 'Start';
-  startButton.children[1].innerText = 'play_arrow';
+  startButton.children[0].innerText = 'play_arrow';
 
   document.querySelector('#generation').innerText = 'generation: 0';
 }
