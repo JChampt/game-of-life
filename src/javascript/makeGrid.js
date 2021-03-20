@@ -49,9 +49,9 @@ function mapGrid() {
 }
 
 function getMaxGridSize() {
-  const cellSize = 35;
-  const verticalBuffer = 100;
-  const horizontalBuffer = 10;
+  const cellSize = 30;
+  const verticalBuffer = 200;
+  const horizontalBuffer = 50;
 
   return [
     Math.floor((visualViewport.height - verticalBuffer) / cellSize),

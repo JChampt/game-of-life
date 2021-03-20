@@ -6,11 +6,19 @@
   padding: 0;
 }
 
-body {
+html {
   font-family: 'Cabin', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #725b53;
+}
+
+body {
   height: 100vh;
   background-color: #ffab91;
-  color: #313c53;
 
   display: grid;
   justify-items: center;
@@ -59,11 +67,12 @@ main {
 }
 
 #grid {
+  position: relative;
+  z-index: 0;
   background: #ffddc1;
   margin-top: 5px;
-  padding: 2px;
+  padding: 22px 22px 110px 22px;
   border-radius: 8px;
-  box-shadow: 3px 3px 15px -1px rgba(69, 82, 104, 0.15);
 }
 
 .row {
@@ -71,9 +80,9 @@ main {
 }
 
 .cell {
-  height: 25px;
-  width: 25px;
-  margin: 3.5px 5px;
+  height: 23px;
+  width: 23px;
+  margin: 2.5px 3.5px;
   border-radius: 15px;
 
   appearance: none;
@@ -86,63 +95,59 @@ main {
 
 .cell:checked {
   background: #d1b7ad;
-  /* background-color: chartreuse; */
+}
+
+#generation {
+  position: relative;
+  bottom: 110px;
 }
 
 #controls {
+  position: relative;
+  bottom: 100px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  /* background-color: #b6c0d2; */
-  height: 75px;
 }
 
 button {
   display: flex;
+  justify-content: center;
   align-items: center;
+
   outline: none;
   cursor: pointer;
   border: none;
-  background: transparent;
 
-  height: 55px;
-  width: min-content;
-  padding: 5px;
-  border-radius: 8px;
-
-  font-size: 28px;
-}
-
-.material-icons {
-  box-shadow: 0px 4px 4px #e7cab5;
+  height: 54px;
+  width: 54px;
   border-radius: 30px;
   background: #a1887f;
-  padding-top: 8px;
-  /* color: #fafafa; */
+  box-shadow: 0px 4px 4px #e7cab5;
 }
 
 .material-icons.md-size {
-  font-size: 42px;
-  height: 54px;
-  width: 54px;
-  background: #a1887f;
+  font-size: 32px;
   color: #fafafa;
 }
 
-@media (hover: hover) {
-  /* make hover only active on non-mobile*/
+button:hover {
+  background: #715a52;
+}
+
+/* make hover only active on non-mobile*/
+/* @media (hover: hover) {
   button:hover {
-    background: #455268;
+    background: #715a52;
     color: white;
   }
   button:hover > .material-icons {
     color: white;
   }
-}
+} */
 
 button:active {
-  box-shadow: 1px 1px 10px 0px rgba(28, 38, 60, 0.6);
+  /* box-shadow: 1px 1px 10px 0px rgba(28, 38, 60, 0.6); */
   transform: translateY(4px);
 }
 
@@ -213,9 +218,6 @@ footer {
   font-size: 1rem;
   line-height: 1.5rem;
   background: #ffddc1;
-  color: #725b53;
-  /* background-color: #455268; */
-  /* color: white; */
 
   padding-top: 2rem;
   padding-left: 10%;
