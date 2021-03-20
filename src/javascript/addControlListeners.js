@@ -65,16 +65,14 @@ function remakeGridAfterScreenResize() {
   let timeOutFunctionId;
   let screenWidth = visualViewport.width;
 
-  window.addEventListener('resize', bar);
-
-  function bar() {
+  window.addEventListener('resize', () => {
     if (visualViewport.width != screenWidth) {
       screenWidth = visualViewport.width;
       clearTimeout(timeOutFunctionId);
 
-      timeOutFunctionId = setTimeout(responsiveMakeGrid, 100);
+      timeOutFunctionId = setTimeout(responsiveMakeGrid, 150);
     }
-  }
+  });
 }
 
 export { addControlListeners };
