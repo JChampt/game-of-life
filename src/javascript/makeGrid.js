@@ -2,9 +2,20 @@ import { random } from './utils';
 
 let GRID;
 
-function responsiveMakeGrid() {
-  if (window.matchMedia('(max-width: 864px)').matches) makeGrid(...getMaxGridSize());
-  else makeGrid(23, 27);
+function sizeGridToScreen() {
+  const [maxFitRows, maxFitColumns] = getMaxGridSize();
+  makeGrid(Math.min(maxFitRows, 23), Math.min(maxFitColumns, 27));
+}
+
+function getMaxGridSize() {
+  const cellSize = 30;
+  const verticalBuffer = 200;
+  const horizontalBuffer = 54;
+
+  return [
+    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
+    Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
+  ];
 }
 
 function makeGrid(rows, columns) {
@@ -48,15 +59,4 @@ function mapGrid() {
   );
 }
 
-function getMaxGridSize() {
-  const cellSize = 30;
-  const verticalBuffer = 200;
-  const horizontalBuffer = 50;
-
-  return [
-    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
-    Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
-  ];
-}
-
-export { GRID, responsiveMakeGrid };
+export { GRID, sizeGridToScreen };

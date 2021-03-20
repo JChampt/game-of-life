@@ -1,5 +1,5 @@
-import { responsiveMakeGrid } from './javascript/makeGrid';
+import { sizeGridToScreen } from './javascript/makeGrid';
 import { addControlListeners } from './javascript/addControlListeners';
 
-responsiveMakeGrid();
+sizeGridToScreen();
 addControlListeners();

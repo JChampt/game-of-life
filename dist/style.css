@@ -132,24 +132,24 @@ button {
   color: #fafafa;
 }
 
-button:hover {
+button:active {
+  background: #715a52;
+  transform: translateY(4px);
+}
+
+[data-start='true'] {
   background: #715a52;
 }
 
 /* make hover only active on non-mobile*/
-/* @media (hover: hover) {
+@media (hover: hover) {
   button:hover {
     background: #715a52;
-    color: white;
   }
+
   button:hover > .material-icons {
     color: white;
   }
-} */
-
-button:active {
-  background: #715a52;
-  transform: translateY(4px);
 }
 
 .desktop {
@@ -212,7 +212,7 @@ button:active {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  width: 240px;
+  max-width: 62vw;
 
   color: #725b53;
 }
@@ -236,7 +236,7 @@ footer * {
 
 .inline {
   display: inline;
-  margin-right: 3px;
+  padding-right: 0.5rem;
 }
 
 .dot {
@@ -252,7 +252,7 @@ footer * {
   margin-top: 3px;
 }
 
-@media only screen and (min-width: 864px) {
+@media only screen and (min-width: 900px) {
   body {
     font-size: 1.1rem;
     grid-template-areas:
@@ -272,15 +272,6 @@ footer * {
 
   .mobile {
     display: none;
-  }
-
-  button {
-    height: 60px;
-    width: 60px;
-  }
-
-  .material-icons.md-size {
-    font-size: 48px;
   }
 
   #how-to-button,
@@ -315,5 +306,6 @@ footer * {
     display: block;
     width: 375px;
     margin: 0 auto;
+    border-top: 1px solid #725b53;
   }
 }
