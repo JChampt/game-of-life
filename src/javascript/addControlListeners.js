@@ -25,9 +25,11 @@ function addControlListeners() {
 function startAnimation() {
   const button = document.querySelector('#start');
   const icon = button.children[0];
+  const pulse = document.querySelector('#pulse');
 
   button.dataset.start = button.dataset.start === 'false' ? 'true' : 'false';
   icon.innerText = icon.innerText == 'play_arrow' ? 'pause' : 'play_arrow';
+  pulse.className = pulse.className == 'pulse' ? '' : 'pulse';
 
   if (button.dataset.start === 'true') animateGrid();
 }

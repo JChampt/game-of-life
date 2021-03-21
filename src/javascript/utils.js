@@ -14,9 +14,11 @@ export function random() {
 
 export function stopAnimationAndResetCounter() {
   const startButton = document.querySelector('#start');
+  const pulse = document.querySelector('#pulse');
 
   startButton.dataset.start = 'false';
   startButton.children[0].innerText = 'play_arrow';
+  pulse.className = 'pulse';
 
   document.querySelector('#generation').innerText = 'generation: 0';
 }
