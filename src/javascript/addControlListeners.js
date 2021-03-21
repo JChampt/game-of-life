@@ -29,7 +29,7 @@ function startAnimation() {
 
   button.dataset.start = button.dataset.start === 'false' ? 'true' : 'false';
   icon.innerText = icon.innerText == 'play_arrow' ? 'pause' : 'play_arrow';
-  pulse.className = pulse.className == 'pulse' ? '' : 'pulse';
+  pulse.className = '';
 
   if (button.dataset.start === 'true') animateGrid();
 }
