@@ -140,24 +140,6 @@ button {
   color: #fafafa;
 }
 
-.tooltip {
-  position: absolute;
-  visibility: hidden;
-  z-index: 2;
-  left: 3rem;
-  bottom: 2rem;
-
-  font-family: 'Cabin', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 17px;
-  color: #fafafa;
-  text-shadow: 1px 1px 2px #715a52;
-
-  border-radius: 8px;
-}
-
 button:active {
   background: #715a52;
   transform: translateY(4px);
