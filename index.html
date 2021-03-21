@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./dist/style.css" />
     <title>Conway's Game of Life</title>
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Round"
       rel="stylesheet"
     />
     <script
@@ -28,22 +28,24 @@
       <div id="generation">generation: 0</div>
       <div id="controls">
         <button id="start" data-start="false">
-          <span class="material-icons md-size"> play_arrow </span>
+          <span class="material-icons-round md-size"> play_arrow </span>
         </button>
         <button id="next">
-          <span class="material-icons md-size"> arrow_forward_ios </span>
+          <span class="material-icons-round md-size"> arrow_forward_ios </span>
         </button>
         <button id="clear">
-          <span class="material-icons md-size"> clear </span>
+          <span class="material-icons-round md-size"> clear </span>
         </button>
         <button id="reset">
-          <span class="material-icons md-size"> restart_alt </span>
+          <span class="material-icons-round md-size"> restart_alt </span>
         </button>
       </div>
     </main>
 
     <aside id="how-to">
-      <span id="how-to-button" class="material-icons"> arrow_drop_down_circle </span>
+      <span id="how-to-button" class="material-icons-round">
+        arrow_drop_down_circle
+      </span>
       <h2>How to Play</h2>
       <p id="p1">
         To play, hit the ‘Play’ button and watch the random board pattern unfold! You can

@@ -127,7 +127,7 @@ button {
   box-shadow: 0px 4px 4px #e7cab5;
 }
 
-.material-icons.md-size {
+.material-icons-round.md-size {
   font-size: 32px;
   color: #fafafa;
 }
@@ -147,7 +147,7 @@ button:active {
     background: #715a52;
   }
 
-  button:hover > .material-icons {
+  button:hover > .material-icons-round {
     color: white;
   }
 }
