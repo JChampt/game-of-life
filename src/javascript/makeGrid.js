@@ -11,9 +11,13 @@ function getMaxGridSize() {
   const cellSize = 30;
   const verticalBuffer = 200;
   const horizontalBuffer = 54;
+  const minimumHeight = 9;
 
   return [
-    Math.floor((visualViewport.height - verticalBuffer) / cellSize),
+    Math.max(
+      Math.floor((visualViewport.height - verticalBuffer) / cellSize),
+      minimumHeight
+    ),
     Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
   ];
 }
