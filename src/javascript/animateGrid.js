@@ -33,7 +33,7 @@ function makeNextGenTemplate() {
     .map((row) => Array(GRID[row].length).fill(0));
 
   for (const [cell, row, col] of stepThroughGrid()) {
-    let cellTotal = getCellTotal(cell);
+    let cellTotal = getCellTotal(row, col);
 
     if (cell.checked) {
       template[row][col] = cellTotal == 3 || cellTotal == 4 ? 1 : 0;
@@ -44,8 +44,7 @@ function makeNextGenTemplate() {
   return template;
 }
 
-function getCellTotal(cell) {
-  const [row, col] = getCellLocation(cell);
+function getCellTotal(row, col) {
   const leftBound = col - 1 < 0 ? col : col - 1;
 
   let rowAbove = GRID[row - 1] ? GRID[row - 1].slice(leftBound, col + 2) : [];
@@ -54,11 +53,7 @@ function getCellTotal(cell) {
 
   return rowAbove
     .concat(rowOn, rowBelow)
-    .reduce((total, foo) => total + (foo.checked == true ? 1 : 0), 0);
-}
-
-function getCellLocation(cell) {
-  return cell.id.split(':').map(Number);
+    .reduce((total, cell) => total + (cell.checked == true ? 1 : 0), 0);
 }
 
 const generation = document.querySelector('#generation');

@@ -15,8 +15,8 @@ function getMaxGridSize() {
 
   return [
     Math.max(
-      Math.floor((visualViewport.height - verticalBuffer) / cellSize),
-      minimumHeight
+      minimumHeight,
+      Math.floor((visualViewport.height - verticalBuffer) / cellSize)
     ),
     Math.floor((visualViewport.width - horizontalBuffer) / cellSize),
   ];
