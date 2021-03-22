@@ -184,8 +184,8 @@ button:active {
     background: #987c73;
   }
 
-  button:hover > .material-icons-round {
-    color: white;
+  [data-start='true']:hover {
+    background: #715a52;
   }
 }
 
