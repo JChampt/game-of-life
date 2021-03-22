@@ -3,7 +3,7 @@
 $pageBackground: #ffab91;
 $secondaryBackground: #ffddc1;
 $textColor: #725b53;
-$lightColor: #fafafa;
+$almostWhite: #fafafa;
 
 * {
   box-sizing: border-box;
@@ -18,7 +18,7 @@ html {
   font-size: 14px;
   line-height: 17px;
 
-  color: #735b54;
+  color: #735b53;
 }
 
 body {
@@ -254,20 +254,37 @@ footer {
   justify-content: center;
   width: 100%;
 
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+
   background: $secondaryBackground;
 
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+
+  address {
+    font-style: normal;
+  }
+
+  address > * {
+    margin-bottom: 0.5em;
+  }
 
   img {
     height: 125px;
     width: 125px;
+    margin-bottom: 3.75rem;
   }
 
-  address {
-    font-style: normal;
+  h3 {
+    letter-spacing: 0.1em;
+    color: #ffab91;
+  }
+
+  a {
+    display: block;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -282,7 +299,7 @@ footer {
   }
 
   header {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   #how-to {
