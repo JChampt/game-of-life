@@ -209,6 +209,10 @@ button:active {
     '. p2 .';
 
   a {
+    color: $almostWhite;
+  }
+
+  a:hover {
     color: $secondaryBackground;
   }
 
@@ -261,7 +265,7 @@ footer {
   background: $secondaryBackground;
 
   padding-top: 3.5em;
-  padding-bottom: 3.5em;
+  padding-bottom: 7em;
 
   address {
     font-style: normal;
