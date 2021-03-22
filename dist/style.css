@@ -81,14 +81,14 @@ main {
 }
 
 .cell {
-  height: 23px;
-  width: 23px;
-  margin: 2.5px 3.5px;
-  border-radius: 15px;
-
   appearance: none;
   outline: none;
   cursor: pointer;
+
+  height: 23px;
+  width: 23px;
+  margin: 2.5px 3.5px;
+  border-radius: 50%;
 
   background: #fafafa;
   transition: background-color calc(1s / 7.5) ease;
@@ -127,7 +127,7 @@ button {
 
   height: 54px;
   width: 54px;
-  border-radius: 30px;
+  border-radius: 50%;
   background: #a1887f;
   box-shadow: 0px 4px 4px #e7cab5;
   -webkit-tap-highlight-color: transparent;
@@ -157,9 +157,9 @@ button:active {
   z-index: -1;
   height: 54px;
   width: 54px;
-  border-radius: 30px;
+  border-radius: 50%;
   background: #987c73;
-  animation: pulse-border 1500ms ease-out infinite;
+  animation: pulse-border 1.5s ease-out infinite;
 }
 
 @keyframes pulse-border {
@@ -242,12 +242,6 @@ button:active {
   max-width: 62vw;
   overflow: hidden;
   transition: max-height 0.75s ease;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #725b53;
 }
 
 footer {
