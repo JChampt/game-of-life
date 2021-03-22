@@ -3,21 +3,12 @@ import { animateGrid, theNextGeneration } from './animateGrid';
 import { responsiveMakeGrid } from './makeGrid';
 
 function addControlListeners() {
-  const startButton = document.querySelector('#start');
-  startButton.addEventListener('click', startAnimation);
-
-  const nextButton = document.querySelector('#next');
-  nextButton.addEventListener('click', theNextGeneration);
-
-  const clearButton = document.querySelector('#clear');
-  clearButton.addEventListener('click', clearGrid);
-
-  const resetButton = document.querySelector('#reset');
-  resetButton.addEventListener('click', resetGrid);
-
-  const howToButton = document.querySelector('#how-to-button');
-  howToButton.style.transform = 'rotate(0deg)';
-  howToButton.addEventListener('click', howTo);
+  document.querySelector('#start').addEventListener('click', startAnimation);
+  document.querySelector('#next').addEventListener('click', theNextGeneration);
+  document.querySelector('#clear').addEventListener('click', clearGrid);
+  document.querySelector('#reset').addEventListener('click', resetGrid);
+  document.querySelector('#how-to-button').addEventListener('click', howTo);
+  document.querySelector('#how-to-heading').addEventListener('click', howTo);
 
   remakeGridAfterScreenResize();
 }
@@ -51,7 +42,7 @@ function resetGrid() {
 function howTo() {
   const p1 = document.querySelector('#p1').style;
   const p2 = document.querySelector('#p2').style;
-  const button = document.querySelector('#how-to-button').style;
+  const button = document.querySelector('#how-to-button');
 
   if (p1.maxHeight == '1000px') {
     [p1.maxHeight, p2.maxHeight] = ['0px', '0px'];
@@ -59,8 +50,7 @@ function howTo() {
     [p1.maxHeight, p2.maxHeight] = ['1000px', '1000px'];
   }
 
-  button.transform =
-    button.transform == 'rotate(0deg)' ? 'rotate(-180deg)' : 'rotate(0deg)';
+  button.innerText = button.innerText == 'add_circle' ? 'remove_circle' : 'add_circle';
 }
 
 function remakeGridAfterScreenResize() {
