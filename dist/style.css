@@ -219,7 +219,6 @@ button:active {
 #how-to-button {
   grid-area: button;
   justify-self: end;
-  transition: transform 0.5s ease;
 }
 
 #how-to h2 {
