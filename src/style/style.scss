@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Press+Start+2P&display=swap');
 
+$pageBackground: #ffab91;
+$secondaryBackground: #ffddc1;
+$textColor: #725b53;
+$lightColor: #fafafa;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,12 +18,12 @@ html {
   font-size: 14px;
   line-height: 17px;
 
-  color: #725b53;
+  color: #735b54;
 }
 
 body {
   height: 100vh;
-  background-color: #ffab91;
+  background-color: $pageBackground;
 
   display: grid;
   justify-items: center;
@@ -64,7 +69,7 @@ main {
   grid-area: main;
   position: relative;
   text-align: center;
-  background: #ffddc1;
+  background: $secondaryBackground;
   padding: 22px 22px 50px 22px;
   margin-bottom: 50px;
   box-shadow: 0px 4px 10px #eb8a84;
@@ -206,10 +211,20 @@ button:active {
     'button header .'
     '. p1 .'
     '. p2 .';
-}
 
-#how-to a {
-  color: #ffddc1;
+  a {
+    color: $secondaryBackground;
+  }
+
+  h2 {
+    font-family: 'Press Start 2P', cursive;
+    grid-area: header;
+
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    color: #725b53;
+  }
 }
 
 #how-to > * {
@@ -219,16 +234,6 @@ button:active {
 #how-to-button {
   grid-area: button;
   justify-self: end;
-}
-
-#how-to h2 {
-  font-family: 'Press Start 2P', cursive;
-  grid-area: header;
-
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 18px;
-  color: #725b53;
 }
 
 #p1 {
@@ -254,7 +259,7 @@ footer {
 
   font-size: 1rem;
   line-height: 1.5rem;
-  background: #ffddc1;
+  background: $secondaryBackground;
 
   padding-top: 2rem;
   padding-left: 20%;
