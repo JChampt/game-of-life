@@ -133,6 +133,26 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+@media (hover: hover) {
+  /* make hover only active on non-mobile*/
+  button:hover {
+    background: #987c73;
+  }
+
+  [data-start='true']:hover {
+    background: #715a52;
+  }
+}
+
+[data-start='true'] {
+  background: #715a52;
+}
+
+button:active {
+  background: #715a52;
+  transform: translateY(4px);
+}
+
 .material-icons-round.md-32 {
   font-size: 32px;
   color: #fafafa;
@@ -145,15 +165,6 @@ button {
 
 .material-icons-round.md-26 {
   font-size: 26px;
-}
-
-button:active {
-  background: #715a52;
-  transform: translateY(4px);
-}
-
-[data-start='true'] {
-  background: #715a52;
 }
 
 .pulse {
@@ -175,17 +186,6 @@ button:active {
   100% {
     transform: scale(1.5);
     opacity: 0;
-  }
-}
-
-/* make hover only active on non-mobile*/
-@media (hover: hover) {
-  button:hover {
-    background: #987c73;
-  }
-
-  [data-start='true']:hover {
-    background: #715a52;
   }
 }
 
