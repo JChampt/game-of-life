@@ -194,10 +194,6 @@ button:active {
   }
 }
 
-.desktop {
-  display: none;
-}
-
 #how-to {
   grid-area: how-to;
   display: grid;
@@ -254,38 +250,25 @@ button:active {
 
 footer {
   grid-area: footer;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 130px;
 
   font-size: 1rem;
   line-height: 1.5rem;
   background: $secondaryBackground;
 
-  padding-top: 2rem;
-  padding-left: 20%;
-}
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 
-footer * {
-  display: block;
-  font-style: normal;
-}
+  img {
+    height: 125px;
+    width: 125px;
+  }
 
-.inline {
-  display: inline;
-  padding-right: 0.5rem;
-}
-
-.dot {
-  height: 5px;
-  width: 5px;
-  background-color: #725b53;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.fab {
-  font-size: 1.5rem;
-  margin-top: 3px;
+  address {
+    font-style: normal;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -302,16 +285,11 @@ footer * {
     font-size: 1.5em;
   }
 
-  .desktop {
-    display: inline;
-  }
-
-  .mobile {
-    display: none;
-  }
-
-  #how-to-button {
-    display: none;
+  #how-to {
+    h2,
+    #how-to-button {
+      display: none;
+    }
   }
 
   #p1,
@@ -323,25 +301,7 @@ footer * {
   }
 
   footer {
-    height: 300px;
-    margin-top: 150px;
-    padding-left: 0px;
-
+    margin-top: 100px;
     font-size: 1.1em;
-    text-align: center;
-  }
-
-  footer * {
-    display: inline;
-    margin: 5px;
-    margin-top: 40px;
-  }
-
-  hr {
-    display: block;
-    width: 250px;
-    margin: 0 auto;
-    border: none;
-    border-top: 1px solid #fafafa;
   }
 }
