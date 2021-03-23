@@ -4,9 +4,9 @@ import { responsiveMakeGrid } from './makeGrid';
 
 function addControlListeners() {
   document.querySelector('.play').addEventListener('click', startAnimation);
-  document.querySelector('#next').addEventListener('click', theNextGeneration);
-  document.querySelector('#clear').addEventListener('click', clearGrid);
-  document.querySelector('#reset').addEventListener('click', resetGrid);
+  document.querySelector('.next').addEventListener('click', theNextGeneration);
+  document.querySelector('.clear').addEventListener('click', clearGrid);
+  document.querySelector('.refresh').addEventListener('click', resetGrid);
   document.querySelector('#how-to-button').addEventListener('click', howTo);
   document.querySelector('#how-to-heading').addEventListener('click', howTo);
 
