@@ -1,5 +1,6 @@
 import { random, stopAnimationAndResetCounter } from './utils';
 
+// 'Global' variable which contains pointers to each cell element in the #grid parent dom element
 let GRID;
 
 function responsiveMakeGrid() {

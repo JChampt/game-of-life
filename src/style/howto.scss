@@ -55,3 +55,20 @@
   overflow: hidden;
   transition: max-height 0.75s ease;
 }
+
+@media only screen and (min-width: 900px) {
+  #how-to {
+    h2,
+    #how-to-button {
+      display: none;
+    }
+  }
+
+  #p1,
+  #p2 {
+    max-height: 1000px;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
