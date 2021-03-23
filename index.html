@@ -22,9 +22,12 @@
       <div id="grid"></div>
       <div id="generation">generation: 0</div>
       <div id="controls">
+        <!-- TODO: Button names should be classes not ID's as they are reusible.  Button names need updating too  -->
         <button id="start" data-start="false" title="Play">
           <span class="material-icons-round md-32"> play_arrow </span>
-          <span id="pulse" class="pulse"></span>
+          <!-- <span id="pulse" class="pulse"></span> -->
+          <!-- disabling pulse during development -->
+          <span id="pulse"></span>
         </button>
         <button id="next" title="Next Generation">
           <span class="material-icons-round md-24"> arrow_forward_ios </span>
@@ -65,7 +68,10 @@
 
     <footer>
       <address>
-        <img src="./src/images/flame-space-adventures.png" alt="a dang wizard" />
+        <img
+          src="./src/images/flame-space-adventures.png"
+          alt="spaceman floating in space with planets surrounding"
+        />
         <h3>CONTACT</h3>
         <a href="mailto:jeremychampt@gmail.com" target="_blank">jeremychampt@gmail.com</a>
         <br />
