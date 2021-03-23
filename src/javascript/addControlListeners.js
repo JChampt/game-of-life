@@ -8,7 +8,7 @@ function addControlListeners() {
   document.querySelector('.clear').addEventListener('click', clearGrid);
   document.querySelector('.refresh').addEventListener('click', resetGrid);
   document.querySelector('#how-to-button').addEventListener('click', howTo);
-  document.querySelector('#how-to-heading').addEventListener('click', howTo);
+  document.querySelector('#how-to').querySelector('h2').addEventListener('click', howTo);
 
   remakeGridAfterScreenResize();
 }
@@ -40,8 +40,10 @@ function resetGrid() {
 }
 
 function howTo() {
-  const [p1, p2] = [...document.getElementsByTagName('p')].map((e) => e.style);
   const button = document.querySelector('#how-to-button');
+  const [p1, p2] = [...document.querySelector('#how-to').getElementsByTagName('p')].map(
+    (element) => element.style
+  );
 
   if (p1.maxHeight == '1000px') {
     [p1.maxHeight, p2.maxHeight] = ['0px', '0px'];
