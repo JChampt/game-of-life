@@ -1,0 +1,83 @@
+#controls {
+  position: relative;
+  z-index: 2;
+  bottom: -30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+  cursor: pointer;
+  border: none;
+
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  background: #a1887f;
+  box-shadow: 0px 4px 4px #e7cab5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  /* make hover only active on non-mobile*/
+  button:hover {
+    background: #987c73;
+  }
+
+  [data-start='true']:hover {
+    background: #715a52;
+  }
+}
+
+[data-start='true'] {
+  background: #715a52;
+}
+
+button:active {
+  background: #715a52;
+  transform: translateY(4px);
+}
+
+.material-icons-round.md-32 {
+  font-size: 32px;
+  color: #fafafa;
+}
+
+.material-icons-round.md-24 {
+  font-size: 24px;
+  color: #fafafa;
+}
+
+.material-icons-round.md-26 {
+  font-size: 26px;
+}
+
+.pulse {
+  position: absolute;
+  z-index: -1;
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  background: #987c73;
+  animation: pulse-border 1.5s ease-out infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

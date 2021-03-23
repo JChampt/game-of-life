@@ -1,3 +1,6 @@
+@use './controls';
+@use './howto';
+
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Press+Start+2P&display=swap');
 
 $pageBackground: #ffab91;
@@ -18,7 +21,7 @@ html {
   font-size: 14px;
   line-height: 17px;
 
-  color: #735b53;
+  color: $textColor;
 }
 
 body {
@@ -46,23 +49,22 @@ header {
   text-align: center;
 
   margin-top: 57px;
-}
 
-header h1 {
-  color: #fafafa;
-  font-size: 36px;
-  line-height: 36px;
-  font-weight: normal;
-  margin-bottom: 2.5rem;
-}
+  h1 {
+    color: $almostWhite;
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: normal;
+    margin-bottom: 2.5rem;
+  }
 
-.subheading {
-  font-size: 18px;
-  line-height: 18px;
-  text-align: center;
-  font-weight: normal;
-
-  color: #725b53;
+  .subheading {
+    color: $textColor;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-weight: normal;
+  }
 }
 
 main {
@@ -79,177 +81,35 @@ main {
 #grid {
   position: relative;
   z-index: 0;
-}
 
-.row {
-  height: 32px;
-}
+  .row {
+    height: 32px;
+  }
 
-.cell {
-  appearance: none;
-  outline: none;
-  cursor: pointer;
+  .cell {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
 
-  height: 23px;
-  width: 23px;
-  margin: 2.5px 3.5px;
-  border-radius: 50%;
+    height: 23px;
+    width: 23px;
+    margin: 2.5px 3.5px;
+    border-radius: 50%;
 
-  background: #fafafa;
-  transition: background-color calc(1s / 7.5) ease;
-  -webkit-tap-highlight-color: transparent;
-}
+    background: #fafafa;
+    transition: background-color calc(1s / 7.5) ease;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-.cell:checked {
-  background: #d1b7ad;
+  .cell:checked {
+    background: #d1b7ad;
+  }
 }
 
 #generation {
   position: relative;
   z-index: 2;
   top: 10px;
-}
-
-#controls {
-  position: relative;
-  z-index: 2;
-  bottom: -30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-button {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  outline: none;
-  cursor: pointer;
-  border: none;
-
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
-  background: #a1887f;
-  box-shadow: 0px 4px 4px #e7cab5;
-  -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-  /* make hover only active on non-mobile*/
-  button:hover {
-    background: #987c73;
-  }
-
-  [data-start='true']:hover {
-    background: #715a52;
-  }
-}
-
-[data-start='true'] {
-  background: #715a52;
-}
-
-button:active {
-  background: #715a52;
-  transform: translateY(4px);
-}
-
-.material-icons-round.md-32 {
-  font-size: 32px;
-  color: #fafafa;
-}
-
-.material-icons-round.md-24 {
-  font-size: 24px;
-  color: #fafafa;
-}
-
-.material-icons-round.md-26 {
-  font-size: 26px;
-}
-
-.pulse {
-  position: absolute;
-  z-index: -1;
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
-  background: #987c73;
-  animation: pulse-border 1.5s ease-out infinite;
-}
-
-@keyframes pulse-border {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-#how-to {
-  grid-area: how-to;
-  display: grid;
-  align-items: center;
-  margin-bottom: 45px;
-
-  grid-template-columns: 1fr 6fr 1fr;
-  grid-template-rows: 1fr min-content min-content;
-  gap: 0.6rem 0px;
-  grid-template-areas:
-    'button header .'
-    '. p1 .'
-    '. p2 .';
-
-  a {
-    color: $almostWhite;
-  }
-
-  a:hover {
-    color: $secondaryBackground;
-  }
-
-  h2 {
-    font-family: 'Press Start 2P', cursive;
-    grid-area: header;
-
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-    color: #725b53;
-  }
-}
-
-#how-to > * {
-  margin-left: 0.7rem;
-}
-
-#how-to-button {
-  grid-area: button;
-  justify-self: end;
-}
-
-#p1 {
-  grid-area: p1;
-}
-
-#p2 {
-  grid-area: p2;
-}
-
-#p1,
-#p2 {
-  max-height: 0px;
-  max-width: 62vw;
-  overflow: hidden;
-  transition: max-height 0.75s ease;
 }
 
 footer {
