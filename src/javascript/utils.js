@@ -13,10 +13,10 @@ export function random() {
 }
 
 export function stopAnimationAndResetCounter() {
-  const startButton = document.querySelector('#start');
+  const playButton = document.querySelector('.play');
 
-  startButton.dataset.start = 'false';
-  startButton.children[0].innerText = 'play_arrow';
+  playButton.dataset.play = 'false';
+  playButton.children[0].innerText = 'play_arrow';
 
   document.querySelector('#generation').innerText = 'generation: 0';
 }

@@ -2,10 +2,10 @@ import { GRID } from './makeGrid';
 import { stepThroughGrid } from './utils';
 
 async function animateGrid() {
-  const startButton = document.querySelector('#start');
+  const playButton = document.querySelector('.play');
   const animationDelay = 333;
 
-  while (startButton.dataset.start == 'true') {
+  while (playButton.dataset.play == 'true') {
     theNextGeneration();
     await sleep(animationDelay);
   }

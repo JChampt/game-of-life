@@ -3,7 +3,7 @@ import { animateGrid, theNextGeneration } from './animateGrid';
 import { responsiveMakeGrid } from './makeGrid';
 
 function addControlListeners() {
-  document.querySelector('#start').addEventListener('click', startAnimation);
+  document.querySelector('.play').addEventListener('click', startAnimation);
   document.querySelector('#next').addEventListener('click', theNextGeneration);
   document.querySelector('#clear').addEventListener('click', clearGrid);
   document.querySelector('#reset').addEventListener('click', resetGrid);
@@ -14,15 +14,15 @@ function addControlListeners() {
 }
 
 function startAnimation() {
-  const button = document.querySelector('#start');
+  const button = document.querySelector('.play');
   const icon = button.children[0];
   const pulse = document.querySelector('#pulse');
 
-  button.dataset.start = button.dataset.start === 'false' ? 'true' : 'false';
+  button.dataset.play = button.dataset.play === 'false' ? 'true' : 'false';
   icon.innerText = icon.innerText == 'play_arrow' ? 'pause' : 'play_arrow';
   pulse.className = '';
 
-  if (button.dataset.start === 'true') animateGrid();
+  if (button.dataset.play === 'true') animateGrid();
 }
 
 function clearGrid() {

@@ -32,12 +32,12 @@ button {
     background: #987c73;
   }
 
-  [data-start='true']:hover {
+  [data-play='true']:hover {
     background: #715a52;
   }
 }
 
-[data-start='true'] {
+[data-play='true'] {
   background: #715a52;
 }
 
