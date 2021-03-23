@@ -1,7 +1,3 @@
-$secondaryBackground: #ffddc1;
-$textColor: #725b53;
-$almostWhite: #fafafa;
-
 #how-to {
   grid-area: how-to;
   display: grid;
@@ -17,11 +13,11 @@ $almostWhite: #fafafa;
     '. p2 .';
 
   a {
-    color: $almostWhite;
+    color: #fafafa;
   }
 
   a:hover {
-    color: $secondaryBackground;
+    color: #ffddc1;
   }
 
   h2 {
@@ -31,7 +27,7 @@ $almostWhite: #fafafa;
     font-weight: normal;
     font-size: 18px;
     line-height: 18px;
-    color: $textColor;
+    color: #725b53;
   }
 }
 
