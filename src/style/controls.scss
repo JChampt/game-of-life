@@ -1,3 +1,5 @@
+@use './pallet-fonts';
+
 #controls {
   position: relative;
   z-index: 2;
@@ -21,7 +23,7 @@ button {
   height: 54px;
   width: 54px;
   border-radius: 50%;
-  background: #a1887f;
+  background: pallet-fonts.$btnBg;
   box-shadow: 0px 4px 4px #e7cab5;
   -webkit-tap-highlight-color: transparent;
 }
@@ -29,31 +31,31 @@ button {
 @media (hover: hover) {
   /* make hover only active on non-mobile*/
   button:hover {
-    background: #987c73;
+    background: pallet-fonts.$btnHover;
   }
 
   [data-play='true']:hover {
-    background: #715a52;
+    background: pallet-fonts.$activeBtn;
   }
 }
 
 [data-play='true'] {
-  background: #715a52;
+  background: pallet-fonts.$activeBtn;
 }
 
 button:active {
-  background: #715a52;
+  background: pallet-fonts.$activeBtn;
   transform: translateY(4px);
 }
 
 .material-icons-round.md-32 {
   font-size: 32px;
-  color: #fafafa;
+  color: pallet-fonts.$lightColor;
 }
 
 .material-icons-round.md-24 {
   font-size: 24px;
-  color: #fafafa;
+  color: pallet-fonts.$lightColor;
 }
 
 .material-icons-round.md-26 {
@@ -66,7 +68,7 @@ button:active {
   height: 54px;
   width: 54px;
   border-radius: 50%;
-  background: #987c73;
+  background: pallet-fonts.$btnBg;
   animation: pulse-border 1.5s ease-out infinite;
 }
 
