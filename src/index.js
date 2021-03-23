@@ -1,6 +1,6 @@
 import { responsiveMakeGrid } from './javascript/makeGrid';
 import { addControlListeners } from './javascript/addControlListeners';
-import './style/main.scss';
+import './style/style.scss';
 import './style/controls.scss';
 import './style/howto.scss';
 
