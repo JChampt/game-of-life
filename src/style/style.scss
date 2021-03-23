@@ -1,4 +1,4 @@
-@use './pallet-fonts';
+@use './colors';
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Press+Start+2P&display=swap');
 
 * {
@@ -13,13 +13,12 @@ html {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
-  color: pallet-fonts.$textColor;
+  color: colors.$textColor;
 }
 
 body {
   height: 100vh;
-  background-color: pallet-fonts.$pageBg;
+  background-color: colors.$pageBg;
 
   display: grid;
   justify-items: center;
@@ -44,7 +43,7 @@ header {
   margin-top: 57px;
 
   h1 {
-    color: pallet-fonts.$lightColor;
+    color: colors.$lightColor;
     font-size: 36px;
     line-height: 36px;
     font-weight: normal;
@@ -52,7 +51,7 @@ header {
   }
 
   .subheading {
-    color: pallet-fonts.$textColor;
+    color: colors.$textColor;
     font-size: 18px;
     line-height: 18px;
     text-align: center;
@@ -64,7 +63,7 @@ main {
   grid-area: main;
   position: relative;
   text-align: center;
-  background: pallet-fonts.$elementBg;
+  background: colors.$elementBg;
   padding: 22px 22px 50px 22px;
   margin-bottom: 50px;
   box-shadow: 0px 4px 10px #eb8a84;
@@ -89,13 +88,13 @@ main {
     margin: 2.5px 3.5px;
     border-radius: 50%;
 
-    background: pallet-fonts.$lightColor;
+    background: colors.$lightColor;
     transition: background-color calc(1s / 7.5) ease;
     -webkit-tap-highlight-color: transparent;
   }
 
   .cell:checked {
-    background: pallet-fonts.$liveCell;
+    background: colors.$liveCell;
   }
 }
 
@@ -115,7 +114,7 @@ footer {
   line-height: 20px;
   letter-spacing: 0.05em;
 
-  background: pallet-fonts.$elementBg;
+  background: colors.$elementBg;
 
   padding-top: 3.5em;
   padding-bottom: 7em;
@@ -136,7 +135,7 @@ footer {
 
   h3 {
     letter-spacing: 0.1em;
-    color: pallet-fonts.$pageBg;
+    color: colors.$pageBg;
   }
 
   a {

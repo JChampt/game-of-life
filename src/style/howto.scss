@@ -1,4 +1,4 @@
-@use './pallet-fonts';
+@use './colors';
 
 #how-to {
   grid-area: how-to;
@@ -15,11 +15,11 @@
     '. p2 .';
 
   a {
-    color: pallet-fonts.$lightColor;
+    color: colors.$lightColor;
   }
 
   a:hover {
-    color: pallet-fonts.$elementBg;
+    color: colors.$elementBg;
   }
 
   h2 {
@@ -29,7 +29,7 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 18px;
-    color: pallet-fonts.$textColor;
+    color: colors.$textColor;
   }
 
   p {
