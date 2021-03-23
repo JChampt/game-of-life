@@ -41,17 +41,13 @@ function resetGrid() {
 
 function howTo() {
   const button = document.querySelector('#how-to-button');
-  const [p1, p2] = [...document.querySelector('#how-to').getElementsByTagName('p')].map(
-    (element) => element.style
-  );
-
-  if (p1.maxHeight == '1000px') {
-    [p1.maxHeight, p2.maxHeight] = ['0px', '0px'];
-  } else {
-    [p1.maxHeight, p2.maxHeight] = ['1000px', '1000px'];
-  }
+  const paragraphs = document.querySelector('#how-to').getElementsByTagName('p');
 
   button.innerText = button.innerText == 'add_circle' ? 'remove_circle' : 'add_circle';
+
+  for (const p of paragraphs) {
+    p.style.maxHeight = p.style.maxHeight == '1000px' ? '0px' : '1000px';
+  }
 }
 
 function remakeGridAfterScreenResize() {
