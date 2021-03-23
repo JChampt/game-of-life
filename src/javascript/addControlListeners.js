@@ -40,8 +40,7 @@ function resetGrid() {
 }
 
 function howTo() {
-  const p1 = document.querySelector('#p1').style;
-  const p2 = document.querySelector('#p2').style;
+  const [p1, p2] = [...document.getElementsByTagName('p')].map((e) => e.style);
   const button = document.querySelector('#how-to-button');
 
   if (p1.maxHeight == '1000px') {
