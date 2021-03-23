@@ -65,10 +65,12 @@ button:active {
 .pulse {
   position: absolute;
   z-index: -1;
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
-  background: colors.$btnBg;
+
+  height: inherit;
+  width: inherit;
+  border-radius: inherit;
+  background: inherit;
+
   animation: pulse-border 1.5s ease-out infinite;
 }
 
