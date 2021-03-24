@@ -24,8 +24,13 @@ button {
   width: 54px;
   border-radius: 50%;
   background: $btnBg;
-  box-shadow: 0px 4px 4px #e7cab5;
+  box-shadow: 0px 4px 4px $btnBoxShadow;
   -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    background: $btnActive;
+    transform: translateY(4px);
+  }
 }
 
 @media (hover: hover) {
@@ -43,24 +48,18 @@ button {
   background: $btnActive;
 }
 
-button:active {
-  background: $btnActive;
-  transform: translateY(4px);
-}
-
 .material-icons-round {
   color: $light;
   &.md-32 {
     font-size: 32px;
   }
 
-  &.md-24 {
-    font-size: 24px;
-  }
-
   &.md-26 {
     font-size: 26px;
-    color: $text;
+  }
+
+  &.md-24 {
+    font-size: 24px;
   }
 }
 

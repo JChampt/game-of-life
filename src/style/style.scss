@@ -67,7 +67,7 @@ main {
   border-radius: 10px;
 
   background: $elementBg;
-  box-shadow: 0px 4px 10px #eb8a84;
+  box-shadow: 0px 4px 10px $mainBoxShadow;
 }
 
 #grid {
@@ -91,10 +91,9 @@ main {
     background: $light;
     transition: background-color calc(1s / 7.5) ease;
     -webkit-tap-highlight-color: transparent;
-  }
-
-  .cell:checked {
-    background: $checkedCell;
+    &:checked {
+      background: $checkedCell;
+    }
   }
 }
 
