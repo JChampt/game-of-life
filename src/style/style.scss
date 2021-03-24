@@ -1,4 +1,4 @@
-@use './colors';
+@use './colors' as *;
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Press+Start+2P&display=swap');
 
 * {
@@ -12,12 +12,12 @@ html {
   font-family: 'Cabin', sans-serif;
   font-size: 14px;
   line-height: 17px;
-  color: colors.$textColor;
+  color: $text;
 }
 
 body {
   height: 100vh;
-  background-color: colors.$pageBg;
+  background-color: $pageBg;
 
   display: grid;
   justify-items: center;
@@ -42,14 +42,14 @@ header {
   margin-top: 57px;
 
   h1 {
-    color: colors.$lightColor;
+    color: $light;
     font-size: 36px;
     line-height: 36px;
     margin-bottom: 2.5rem;
   }
 
   .subheading {
-    color: colors.$textColor;
+    color: $text;
     font-size: 18px;
     line-height: 18px;
     text-align: center;
@@ -60,12 +60,14 @@ main {
   grid-area: main;
   position: relative;
   text-align: center;
-  padding: 22px 22px 50px 22px;
-  margin-bottom: 50px;
 
-  background: colors.$elementBg;
-  box-shadow: 0px 4px 10px #eb8a84;
+  padding: 22px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
   border-radius: 10px;
+
+  background: $elementBg;
+  box-shadow: 0px 4px 10px #eb8a84;
 }
 
 #grid {
@@ -86,13 +88,13 @@ main {
     margin: 2.5px 3.5px;
     border-radius: 50%;
 
-    background: colors.$lightColor;
+    background: $light;
     transition: background-color calc(1s / 7.5) ease;
     -webkit-tap-highlight-color: transparent;
   }
 
   .cell:checked {
-    background: colors.$liveCell;
+    background: $checkedCell;
   }
 }
 
@@ -111,7 +113,7 @@ footer {
   line-height: 20px;
   letter-spacing: 0.05em;
 
-  background: colors.$elementBg;
+  background: $elementBg;
 
   padding-top: 3.5em;
   padding-bottom: 7em;
@@ -128,7 +130,7 @@ footer {
 
   h3 {
     letter-spacing: 0.1em;
-    color: colors.$pageBg;
+    color: $pageBg;
   }
 
   a {
