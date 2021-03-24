@@ -27,20 +27,20 @@ button {
   box-shadow: 0px 4px 4px $btnBoxShadow;
   -webkit-tap-highlight-color: transparent;
 
-  &:active {
-    background: $btnActive !important;
-    transform: translateY(4px) !important;
+  @media (hover: hover) {
+    /* make hover only active on non-mobile*/
+    &:hover {
+      background: $btnHover;
+    }
   }
 
   &[data-play='true'] {
-    background: $btnActive !important;
+    background: $btnActive;
   }
-}
 
-@media (hover: hover) {
-  /* make hover only active on non-mobile*/
-  button:hover {
-    background: $btnHover;
+  &:active {
+    background: $btnActive;
+    transform: translateY(4px);
   }
 }
 
@@ -49,11 +49,9 @@ button {
   &.md-32 {
     font-size: 32px;
   }
-
   &.md-26 {
     font-size: 26px;
   }
-
   &.md-24 {
     font-size: 24px;
   }

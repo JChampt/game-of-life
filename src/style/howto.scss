@@ -35,14 +35,13 @@
     max-width: 62vw;
     overflow: hidden;
     transition: max-height 0.75s ease;
-  }
 
-  p:nth-of-type(1) {
-    grid-area: p1;
-  }
-
-  p:nth-of-type(2) {
-    grid-area: p2;
+    &:nth-of-type(1) {
+      grid-area: p1;
+    }
+    &:nth-of-type(2) {
+      grid-area: p2;
+    }
   }
 }
 
