@@ -26,6 +26,15 @@ button {
   background: $btnBg;
   box-shadow: 0px 4px 4px $btnBoxShadow;
   -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    background: $btnActive !important;
+    transform: translateY(4px) !important;
+  }
+
+  &[data-play='true'] {
+    background: $btnActive !important;
+  }
 }
 
 @media (hover: hover) {
@@ -33,19 +42,6 @@ button {
   button:hover {
     background: $btnHover;
   }
-
-  [data-play='true']:hover {
-    background: $btnActive;
-  }
-}
-
-button:active {
-  background: $btnActive;
-  transform: translateY(4px);
-}
-
-[data-play='true'] {
-  background: $btnActive;
 }
 
 .material-icons-round {
