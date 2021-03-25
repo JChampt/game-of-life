@@ -1,4 +1,4 @@
-@use './colors';
+@use './colors' as *;
 
 #controls {
   position: relative;
@@ -23,43 +23,38 @@ button {
   height: 54px;
   width: 54px;
   border-radius: 50%;
-  background: colors.$btnBg;
-  box-shadow: 0px 4px 4px #e7cab5;
+  background: $btnBg;
+  box-shadow: 0px 4px 4px $btnBoxShadow;
   -webkit-tap-highlight-color: transparent;
-}
 
-@media (hover: hover) {
-  /* make hover only active on non-mobile*/
-  button:hover {
-    background: colors.$btnHover;
+  @media (hover: hover) {
+    /* make hover only active on non-mobile*/
+    &:hover {
+      background: $btnHover;
+    }
   }
 
-  [data-play='true']:hover {
-    background: colors.$activeBtn;
+  &[data-play='true'] {
+    background: $btnActive;
+  }
+
+  &:active {
+    background: $btnActive;
+    transform: translateY(4px);
   }
 }
 
-[data-play='true'] {
-  background: colors.$activeBtn;
-}
-
-button:active {
-  background: colors.$activeBtn;
-  transform: translateY(4px);
-}
-
-.material-icons-round.md-32 {
-  font-size: 32px;
-  color: colors.$lightColor;
-}
-
-.material-icons-round.md-24 {
-  font-size: 24px;
-  color: colors.$lightColor;
-}
-
-.material-icons-round.md-26 {
-  font-size: 26px;
+.material-icons-round {
+  color: $light;
+  &.md-32 {
+    font-size: 32px;
+  }
+  &.md-26 {
+    font-size: 26px;
+  }
+  &.md-24 {
+    font-size: 24px;
+  }
 }
 
 .pulse {

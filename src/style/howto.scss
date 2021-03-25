@@ -1,4 +1,4 @@
-@use './colors';
+@use './colors' as *;
 
 #how-to {
   grid-area: how-to;
@@ -15,11 +15,10 @@
     '. p2 .';
 
   a {
-    color: colors.$lightColor;
-  }
-
-  a:hover {
-    color: colors.$elementBg;
+    color: $light;
+    &:hover {
+      color: $blockBg;
+    }
   }
 
   h2 {
@@ -28,7 +27,7 @@
 
     font-size: 18px;
     line-height: 18px;
-    color: colors.$textColor;
+    color: $text;
   }
 
   p {
@@ -36,14 +35,13 @@
     max-width: 62vw;
     overflow: hidden;
     transition: max-height 0.75s ease;
-  }
 
-  p:nth-of-type(1) {
-    grid-area: p1;
-  }
-
-  p:nth-of-type(2) {
-    grid-area: p2;
+    &:nth-of-type(1) {
+      grid-area: p1;
+    }
+    &:nth-of-type(2) {
+      grid-area: p2;
+    }
   }
 }
 
@@ -54,6 +52,7 @@
 #how-to-button {
   grid-area: button;
   justify-self: end;
+  color: $text;
 }
 
 @media only screen and (min-width: 900px) {
