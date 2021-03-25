@@ -1,0 +1,58 @@
+@use './colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: 'Cabin', sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: $text;
+}
+
+body {
+  height: 100vh;
+  background-color: $pageBg;
+
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem 0px;
+  grid-template-areas:
+    'header'
+    'main'
+    'how-to'
+    'footer';
+
+  @media only screen and (min-width: 900px) {
+    font-size: 1.1rem;
+    grid-template-areas:
+      'header'
+      'how-to'
+      'main'
+      'footer';
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  grid-area: main;
+  position: relative;
+  text-align: center;
+
+  padding: 22px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+
+  background: $blockBg;
+  box-shadow: 0px 4px 10px $mainBoxShadow;
+}
